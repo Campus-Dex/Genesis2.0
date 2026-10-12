@@ -51,12 +51,12 @@ html.is-booting {
 .btn--primary {
   background: var(--primary);
   color: #fff;
-  box-shadow: 0 0 0 0 oklch(0.62 0.17 294 / 0);
+  box-shadow: 0 0 0 0 oklch(0.62 0.17 250 / 0);
 }
 
 .btn--primary:hover {
-  background: oklch(0.68 0.17 294);
-  box-shadow: 0 0 32px -6px oklch(0.7 0.18 294 / 0.75);
+  background: oklch(0.68 0.17 250);
+  box-shadow: 0 0 32px -6px oklch(0.7 0.18 250 / 0.75);
   transform: translateY(-1px);
 }
 
@@ -67,7 +67,7 @@ html.is-booting {
 
 .btn--ghost:hover {
   border-color: var(--primary-glow);
-  background: oklch(0.62 0.17 294 / 0.12);
+  background: oklch(0.62 0.17 250 / 0.12);
 }
 
 .btn--large {
@@ -103,7 +103,7 @@ html.is-booting {
   width: clamp(240px, 36vw, 520px);
   height: auto;
   opacity: 0;
-  filter: drop-shadow(0 0 14px oklch(0.85 0.12 294 / 0.9));
+  filter: drop-shadow(0 0 14px oklch(0.85 0.12 250 / 0.9));
 }
 
 .boot__streak {
@@ -308,10 +308,10 @@ html.is-booting {
   position: absolute;
   max-width: min(34rem, calc(100% - var(--gutter) * 2));
   padding: 1.75rem 2rem 2rem;
-  background: oklch(0.13 0.01 294 / 0.78);
+  background: oklch(0.13 0.01 250 / 0.78);
   border: 1px solid var(--line);
   border-radius: 2px;
-  box-shadow: inset 0 1px 0 oklch(0.78 0.14 294 / 0.18), 0 30px 80px -40px oklch(0.62 0.17 294 / 0.5);
+  box-shadow: inset 0 1px 0 oklch(0.78 0.14 250 / 0.18), 0 30px 80px -40px oklch(0.62 0.17 250 / 0.5);
 }
 
 .transmission__panel--1 {
@@ -417,7 +417,7 @@ html.is-booting {
   overflow: hidden;
   background:
     repeating-linear-gradient(to bottom, oklch(1 0 0 / 0.025) 0 1px, transparent 1px 4px),
-    radial-gradient(120% 80% at calc(20% + var(--i) * 15%) 110%, oklch(0.32 0.12 calc(294 + var(--i) * 14) / 0.9), transparent 60%),
+    radial-gradient(120% 80% at calc(20% + var(--i) * 15%) 110%, oklch(0.32 0.12 calc(250 + var(--i) * 14) / 0.9), transparent 60%),
     radial-gradient(70% 50% at 80% 0%, oklch(0.3 0.06 75 / 0.35), transparent 60%),
     var(--surface);
   transition: border-color 200ms var(--ease-out-expo);
@@ -446,7 +446,7 @@ html.is-booting {
   left: 1.5rem;
   font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 1;
-  color: oklch(0.78 0.14 294 / 0.35);
+  color: oklch(0.78 0.14 250 / 0.35);
 }
 
 .event--tall .event__index {

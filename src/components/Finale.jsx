@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { fest, socials } from '../content'
-import { sceneState } from '../scene/state'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,16 +11,6 @@ export default function Finale() {
   useEffect(() => {
     const mm = gsap.matchMedia()
     mm.add('(prefers-reduced-motion: no-preference)', () => {
-      ScrollTrigger.create({
-        trigger: root.current,
-        start: 'top 90%',
-        end: 'top 20%',
-        scrub: true,
-        onUpdate: (self) => {
-          sceneState.finale = self.progress
-          sceneState.recede = 1 - self.progress
-        },
-      })
       gsap.from('.finale__title', {
         scrollTrigger: { trigger: root.current, start: 'top 70%' },
         clipPath: 'inset(0 0 100% 0)',
@@ -36,7 +25,7 @@ export default function Finale() {
     <section className="finale" id="register" ref={root} aria-labelledby="finale-heading">
       <div className="finale__inner">
         <h2 id="finale-heading" className="finale__title">
-          Enter the city.
+          Make the landing.
         </h2>
         <p className="finale__text">
           Registration is open for {fest.name} {fest.year}. {fest.dateLabel}, {fest.venue.toLowerCase()}.

@@ -1,15 +1,15 @@
 :root {
   color-scheme: dark;
 
-  --bg: oklch(0.07 0 0);
-  --surface: oklch(0.13 0.01 294);
-  --line: oklch(0.32 0.03 294 / 0.6);
-  --primary: oklch(0.62 0.17 294);
-  --primary-deep: oklch(0.42 0.15 294);
-  --primary-glow: oklch(0.78 0.14 294);
+  --bg: oklch(0.07 0.012 255);
+  --surface: oklch(0.13 0.01 250);
+  --line: oklch(0.32 0.03 250 / 0.6);
+  --primary: oklch(0.62 0.17 250);
+  --primary-deep: oklch(0.42 0.15 250);
+  --primary-glow: oklch(0.78 0.14 250);
   --accent: oklch(0.8 0.15 75);
-  --ink: oklch(0.95 0.01 294);
-  --muted: oklch(0.74 0.02 294);
+  --ink: oklch(0.95 0.01 250);
+  --muted: oklch(0.74 0.02 250);
 
   --font-display: 'Unbounded', 'Arial Black', Impact, sans-serif;
   --font-body: 'Golos Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;

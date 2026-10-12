@@ -29,7 +29,7 @@ export default function Countdown() {
     <section className="countdown" id="schedule" aria-labelledby="countdown-heading">
       <div className="countdown__inner">
         <h2 id="countdown-heading">
-          The city wakes <span className="countdown__date">{fest.dateLabel}</span>
+          Liftoff <span className="countdown__date">{fest.dateLabel}</span>
         </h2>
 
         {t.live ? (

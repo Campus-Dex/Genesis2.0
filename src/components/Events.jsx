@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { events } from '../content'
-import { sceneState } from '../scene/state'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,17 +11,6 @@ export default function Events() {
 
   useEffect(() => {
     const mm = gsap.matchMedia()
-    mm.add('(prefers-reduced-motion: no-preference)', () => {
-      ScrollTrigger.create({
-        trigger: root.current,
-        start: 'top 85%',
-        end: 'top 15%',
-        scrub: true,
-        onUpdate: (self) => {
-          sceneState.recede = self.progress
-        },
-      })
-    })
     mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
       const distance = () => track.current.scrollWidth - window.innerWidth
       gsap.to(track.current, {

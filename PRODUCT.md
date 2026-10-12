@@ -29,7 +29,7 @@ The only college fest whose site feels like the first two minutes of a film, not
 
 ## Brand Personality
 
-Cinematic, composed, cold-lit. The voice is Ghost in the Shell and Blade Runner 2049: slow camera, haze and rain, serious rather than loud. Copy is short and declarative. Motion is deliberate and rehearsed; nothing bounces.
+Cinematic, composed, cold-lit. The voice is real spaceflight: Apollo footage and Interstellar, slow camera, black sky, sunlight with no air to soften it, serious rather than loud. Copy is short and declarative. Motion is deliberate and rehearsed; nothing bounces.
 
 ## Anti-references
 
@@ -37,7 +37,7 @@ Studio Trigger maximalism (neon yellow, speed lines, glitch on everything). Gene
 
 ## Design Principles
 
-- One signature moment: the Genesis Core and the scroll-driven camera carry the page; everything else is quieter than it.
+- One signature moment: the mission camera, flying from Earth orbit to a moon landing as the visitor scrolls, carries the page; everything else is quieter than it.
 - Pacing over density: one idea per viewport, generous silence between beats.
 - Holograms, not cards: information appears as projected readouts in the scene, not as boxes on top of it.
 - Real content only: placeholders are centralized and clearly marked, never scattered lorem ipsum.

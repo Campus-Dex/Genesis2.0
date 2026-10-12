@@ -2,11 +2,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { fest } from '../content'
-import { sceneState } from '../scene/state'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const LABELS = ['TRANSMISSION 01', 'TRANSMISSION 02', 'TRANSMISSION 03']
+const LABELS = ['MISSION LOG 01', 'MISSION LOG 02', 'MISSION LOG 03']
 
 export default function Transmission({ reducedMotion }) {
   const root = useRef()
@@ -21,9 +20,6 @@ export default function Transmission({ reducedMotion }) {
           start: 'top top',
           end: 'bottom bottom',
           scrub: 0.6,
-          onUpdate: (self) => {
-            sceneState.open = self.progress
-          },
         },
       })
       panels.forEach((panel, i) => {

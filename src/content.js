@@ -3,11 +3,11 @@
 export const fest = {
   name: 'GENESIS',
   year: '2026',
-  tagline: 'Three days. One city that only exists in the dark.',
+  tagline: 'Three days. One launch window.',
   description: [
     'Genesis is the annual technical festival of Placeholder Institute of Technology, where 4,000 students from 120 campuses build, break, and compete across three days.',
     'Hackathons that run through the night. Robotics on a floor that used to be a parking deck. A keynote stage lit like a runway.',
-    'This year the city wakes on the 10th of October. Registration is open.',
+    'Launch window opens 10 October. Registration is open.',
   ],
   // ISO string with timezone; the countdown targets this instant.
   startsAt: '2026-10-10T09:00:00+05:30',

@@ -1,26 +1,45 @@
-import { Suspense, useRef } from 'react'
+import { Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Grid } from '@react-three/drei'
+import { Stars } from '@react-three/drei'
 import { EffectComposer, Bloom, ChromaticAberration, Noise, Vignette } from '@react-three/postprocessing'
-import Core from './Core'
-import Rain from './Rain'
-import { sceneState } from './state'
+import * as THREE from 'three'
+import { Earth, Moon } from './Planets'
+import Shuttle from './Shuttle'
+
+// The mission, one shot per point, evenly spaced over page scroll (0 → 1):
+// orbit · shuttle close-up · past the shuttle · cruise · moon approach · low orbit · landed, Earthrise.
+const path = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(0, 0.4, 7.5),
+  new THREE.Vector3(-0.6, 0.9, 6),
+  new THREE.Vector3(2.6, 0.8, 1),
+  new THREE.Vector3(4, 1.5, -25),
+  new THREE.Vector3(5, 2.5, -45),
+  new THREE.Vector3(6, 6.5, -56),
+  new THREE.Vector3(5.86, 4.87, -58.67),
+])
+const look = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(0, -0.4, 0),
+  new THREE.Vector3(1.4, 0.1, 2),
+  new THREE.Vector3(6, 1, -60),
+  new THREE.Vector3(6, 1, -60),
+  new THREE.Vector3(6, 1, -60),
+  new THREE.Vector3(6, 1, -62),
+  new THREE.Vector3(0, -13, -3),
+])
+const target = new THREE.Vector3()
+const aim = new THREE.Vector3().copy(look.points[0])
 
 function CameraRig() {
-  const smooth = useRef({ open: 0, finale: 0 })
   useFrame((state, dt) => {
-    const s = smooth.current
-    const k = 1 - Math.exp(-dt * 2.6)
-    s.open += (sceneState.open - s.open) * k
-    s.finale += (sceneState.finale - s.finale) * k
-    const t = state.clock.elapsedTime
+    const max = document.documentElement.scrollHeight - window.innerHeight
+    const p = max > 0 ? Math.min(window.scrollY / max, 1) : 0
+    const k = 1 - Math.exp(-dt * 3)
     const cam = state.camera
-    // push in while the transmission opens, pull back out for the finale
-    const z = 8.2 - s.open * 3.1 + s.finale * 4.5
-    cam.position.x += (Math.sin(t * 0.17) * 0.45 - cam.position.x) * k
-    cam.position.y += (0.35 + Math.cos(t * 0.13) * 0.3 - cam.position.y) * k
-    cam.position.z += (z - cam.position.z) * k
-    cam.lookAt(0, 0, 0)
+    path.getPoint(p, target)
+    cam.position.lerp(target, k)
+    look.getPoint(p, target)
+    aim.lerp(target, k)
+    cam.lookAt(aim)
   })
   return null
 }
@@ -30,30 +49,18 @@ export default function Scene({ reducedMotion, mobile }) {
     <div className="scene" aria-hidden="true">
       <Canvas
         dpr={mobile ? [1, 1.25] : [1, 1.6]}
-        camera={{ position: [0, 0.35, 8.2], fov: 42, near: 0.1, far: 60 }}
+        camera={{ position: path.points[0].toArray(), fov: 42, near: 0.05, far: 400 }}
+        onCreated={({ camera }) => camera.lookAt(look.points[0])}
         gl={{ antialias: false, powerPreference: 'high-performance', alpha: true }}
         frameloop={reducedMotion ? 'demand' : 'always'}
       >
-        <fog attach="fog" args={['#060606', 7, 24]} />
-        <ambientLight intensity={0.35} color="#6b5bb0" />
-        <directionalLight position={[-6, 4, -5]} intensity={2.2} color="#f5b942" />
-        <directionalLight position={[5, -2, 6]} intensity={0.6} color="#8b5cf6" />
+        <ambientLight intensity={0.06} color="#9db4ff" />
+        <directionalLight position={[10, 3.5, 2.5]} intensity={2.6} color="#fff6ea" />
+        <Stars radius={150} depth={60} count={mobile ? 3000 : 7000} factor={4} saturation={0} fade speed={reducedMotion ? 0 : 0.4} />
         <Suspense fallback={null}>
-          <Core />
-          {!reducedMotion && <Rain count={mobile ? 500 : 1500} />}
-          <Grid
-            position={[0, -2.6, 0]}
-            args={[60, 60]}
-            cellSize={0.7}
-            cellThickness={0.6}
-            cellColor="#3b2f6e"
-            sectionSize={3.5}
-            sectionThickness={1}
-            sectionColor="#6d4fd6"
-            fadeDistance={26}
-            fadeStrength={1.6}
-            infiniteGrid
-          />
+          <Earth />
+          <Moon />
+          <Shuttle />
         </Suspense>
         {!reducedMotion && <CameraRig />}
         <EffectComposer disableNormalPass multisampling={0}>
