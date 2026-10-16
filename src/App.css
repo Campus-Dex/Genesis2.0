@@ -17,6 +17,7 @@
 .btn--primary:hover { background: #fff; }
 .btn--ghost { color: white; background: #102a65; }
 .btn--ghost:hover { color: #111; background: white; }
+.btn > span { font-size: 1.15em; line-height: 1; -webkit-text-stroke: 1.5px currentColor; }
 .btn--large { min-height: 3.8rem; padding: 1rem 1.8rem; font-size: 1rem; }
 
 .hero { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: max(760px, 100svh); overflow: hidden; padding: 9rem var(--gutter) 4.5rem; color: white; background: #108fe2; border-bottom: 8px solid #111; }
