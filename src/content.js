@@ -1,93 +1,23 @@
-// TODO: replace placeholders with real fest details. Everything on the page reads from here.
-
+// Confirmed details from the Genesis 2.0 event poster. Organizer links and a detailed timetable are not yet available.
 export const fest = {
   name: 'GENESIS',
-  year: '2026',
-  tagline: 'Three days. One launch window.',
-  description: [
-    'Genesis is the annual technical festival of Placeholder Institute of Technology, where 4,000 students from 120 campuses build, break, and compete across three days.',
-    'Hackathons that run through the night. Robotics on a floor that used to be a parking deck. A keynote stage lit like a runway.',
-    'Launch window opens 10 October. Registration is open.',
-  ],
-  // ISO string with timezone; the countdown targets this instant.
-  startsAt: '2026-10-10T09:00:00+05:30',
-  dateLabel: '10 – 12 OCT 2026',
-  venue: 'PLACEHOLDER INSTITUTE OF TECHNOLOGY',
-  city: 'SONIPAT, HR',
-  coordinates: '28.9931° N, 77.0151° E',
+  year: '2.0',
+  tagline: 'The annual tech fest.',
+  dateLabel: '30–31 OCTOBER, 2026',
+  venue: 'Delhi-NCR, Sonipat',
+  host: 'Gateway Education',
   registerUrl: '#register',
-  organizerUrl: 'https://campusdex.com',
 }
 
-// Later: replace with fetch('/api/events') from the Worker (D1 `events` table).
+export const description = [
+  { label: 'BUILD', text: 'Bring your ideas to life. Make something worth showing off.' },
+  { label: 'LEARN', text: 'Meet curious minds, try something new, and leave with fresh skills.' },
+  { label: 'COMPETE + COLLABORATE', text: 'Find your people, join the challenge, and make your move.' },
+]
+
 export const events = [
-  {
-    id: 'hackathon',
-    name: 'Nightfall Hackathon',
-    blurb: '36 hours. 200 teams. The building does not close.',
-    day: 'Day 1 – 2',
-    span: 'wide',
-  },
-  {
-    id: 'robowars',
-    name: 'Robowars',
-    blurb: '30 kg bots, a steel arena, and a crowd that wants sparks.',
-    day: 'Day 2',
-    span: 'tall',
-  },
-  {
-    id: 'ctf',
-    name: 'Capture the Flag',
-    blurb: 'Reverse it, break it, own it. Jeopardy format, live scoreboard.',
-    day: 'Day 1',
-    span: 'base',
-  },
-  {
-    id: 'keynote',
-    name: 'Keynote Stage',
-    blurb: 'Founders and researchers on a stage lit like a runway.',
-    day: 'Day 2',
-    span: 'wide',
-  },
-  {
-    id: 'droneracing',
-    name: 'Drone Racing',
-    blurb: 'FPV through a neon gate course at 120 km/h.',
-    day: 'Day 3',
-    span: 'base',
-  },
-  {
-    id: 'showcase',
-    name: 'Project Showcase',
-    blurb: 'Two hundred demos on the deck. Judges walk the floor at dusk.',
-    day: 'Day 3',
-    span: 'tall',
-  },
-  {
-    id: 'aiarena',
-    name: 'AI Arena',
-    blurb: 'Your agent versus theirs. One bracket, no human hands on the keys.',
-    day: 'Day 2',
-    span: 'wide',
-  },
-  {
-    id: 'blindcode',
-    name: 'Blind Coding',
-    blurb: 'Monitors off. Write it clean the first time or not at all.',
-    day: 'Day 1',
-    span: 'base',
-  },
-]
-
-export const schedule = [
-  { day: 'Day 1', date: '10 Oct', beats: ['Gates open 09:00', 'Opening ceremony', 'Hackathon begins 18:00'] },
-  { day: 'Day 2', date: '11 Oct', beats: ['Robowars finals', 'Keynote stage', 'Hackathon judging 06:00'] },
-  { day: 'Day 3', date: '12 Oct', beats: ['Drone racing', 'Project showcase', 'Closing 21:00'] },
-]
-
-export const socials = [
-  { label: 'Instagram', href: '#' },
-  { label: 'LinkedIn', href: '#' },
-  { label: 'X', href: '#' },
-  { label: 'Mail', href: 'mailto:hello@example.com' },
+  { id: 'technical', name: 'Technical Events', blurb: 'Build, solve, experiment, and show what you can do.', color: 'blue' },
+  { id: 'esports', name: 'Esports', blurb: 'Bring your team. Take your place in the arena.', color: 'purple' },
+  { id: 'competitions', name: 'Competitions', blurb: 'Step up, take on the challenge, and go for the win.', color: 'red' },
+  { id: 'exhibitions', name: 'Exhibitions', blurb: 'Explore ideas and projects from across campus.', color: 'cyan' },
 ]

@@ -1,79 +1,40 @@
 import { useEffect, useState } from 'react'
-import { fest, schedule } from '../content'
+import { fest } from '../content'
 
-const target = new Date(fest.startsAt).getTime()
-
+const target = new Date('2026-10-30T09:00:00+05:30').getTime()
 function remaining() {
   const diff = Math.max(0, target - Date.now())
-  const s = Math.floor(diff / 1000)
-  return {
-    live: diff === 0,
-    d: Math.floor(s / 86400),
-    h: Math.floor((s % 86400) / 3600),
-    m: Math.floor((s % 3600) / 60),
-    s: s % 60,
-  }
+  const seconds = Math.floor(diff / 1000)
+  return { live: diff === 0, d: Math.floor(seconds / 86400), h: Math.floor((seconds % 86400) / 3600), m: Math.floor((seconds % 3600) / 60) }
 }
-
 const pad = (n) => String(n).padStart(2, '0')
 
 export default function Countdown() {
-  const [t, setT] = useState(remaining)
-
+  const [time, setTime] = useState(remaining)
   useEffect(() => {
-    const id = window.setInterval(() => setT(remaining()), 1000)
-    return () => window.clearInterval(id)
+    const timer = window.setInterval(() => setTime(remaining()), 60000)
+    return () => window.clearInterval(timer)
   }, [])
 
   return (
     <section className="countdown" id="schedule" aria-labelledby="countdown-heading">
+      <div className="countdown__stamp" aria-hidden="true">MARK<br />YOUR<br />CALENDAR!</div>
       <div className="countdown__inner">
-        <h2 id="countdown-heading">
-          Liftoff <span className="countdown__date">{fest.dateLabel}</span>
-        </h2>
-
-        {t.live ? (
-          <p className="countdown__live readout">LIVE NOW</p>
+        <p className="section-kicker">IT'S A DATE</p>
+        <h2 id="countdown-heading">See you<br /><span>there!</span></h2>
+        <p className="countdown__date">{fest.dateLabel}</p>
+        <p className="countdown__venue">{fest.venue} <span>·</span> Hosted by {fest.host}</p>
+        {time.live ? (
+          <p className="countdown__live">HAPPENING NOW!</p>
         ) : (
-          <p className="countdown__clock readout" aria-hidden="true">
-            <span>
-              {pad(t.d)}
-              <small>days</small>
-            </span>
-            <span>
-              {pad(t.h)}
-              <small>hrs</small>
-            </span>
-            <span>
-              {pad(t.m)}
-              <small>min</small>
-            </span>
-            <span>
-              {pad(t.s)}
-              <small>sec</small>
-            </span>
-          </p>
+          <div className="countdown__clock" aria-label={`${time.d} days, ${time.h} hours until Genesis`}>
+            <span><b>{pad(time.d)}</b><small>DAYS</small></span>
+            <i aria-hidden="true">:</i>
+            <span><b>{pad(time.h)}</b><small>HRS</small></span>
+            <i aria-hidden="true">:</i>
+            <span><b>{pad(time.m)}</b><small>MIN</small></span>
+          </div>
         )}
-        <p className="sr-only">
-          {fest.name} begins {fest.dateLabel} at {fest.venue}.
-        </p>
-
-        <ol className="schedule">
-          {schedule.map((day) => (
-            <li className="schedule__day" key={day.day}>
-              <p className="schedule__label readout">
-                {day.day} <span>{day.date}</span>
-              </p>
-              <ul className="schedule__beats">
-                {day.beats.map((beat) => (
-                  <li key={beat}>{beat}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ol>
-
-        <p className="countdown__venue readout">{fest.venue}</p>
       </div>
     </section>
   )

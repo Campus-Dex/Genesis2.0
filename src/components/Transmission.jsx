@@ -1,57 +1,19 @@
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { fest } from '../content'
+import { description } from '../content'
 
-gsap.registerPlugin(ScrollTrigger)
-
-const LABELS = ['MISSION LOG 01', 'MISSION LOG 02', 'MISSION LOG 03']
-
-export default function Transmission({ reducedMotion }) {
-  const root = useRef()
-
-  useEffect(() => {
-    if (reducedMotion) return
-    const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray('.transmission__panel')
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.6,
-        },
-      })
-      panels.forEach((panel, i) => {
-        const at = i
-        tl.fromTo(
-          panel,
-          { clipPath: 'inset(0 100% 0 0)', opacity: 1 },
-          { clipPath: 'inset(0 0% 0 0)', duration: 0.35, ease: 'none' },
-          at,
-        )
-        if (i < panels.length - 1) {
-          tl.to(panel, { opacity: 0, y: -24, duration: 0.25, ease: 'none' }, at + 0.75)
-        }
-      })
-    }, root)
-    return () => ctx.revert()
-  }, [reducedMotion])
-
+export default function Transmission() {
   return (
-    <section
-      className={`transmission${reducedMotion ? ' transmission--static' : ''}`}
-      ref={root}
-      aria-labelledby="transmission-heading"
-    >
-      <div className="transmission__sticky">
-        <h2 id="transmission-heading" className="sr-only">
-          What is {fest.name}
-        </h2>
-        {fest.description.map((text, i) => (
-          <article className={`transmission__panel transmission__panel--${i + 1}`} key={i}>
-            <p className="transmission__label readout">{LABELS[i]}</p>
-            <p className="transmission__text">{text}</p>
+    <section className="intro" aria-labelledby="intro-heading">
+      <div className="intro__heading">
+        <p className="section-kicker">YOUR NEXT CHAPTER STARTS HERE</p>
+        <h2 id="intro-heading">Make some<br /><span>noise.</span></h2>
+      </div>
+      <div className="intro__panels">
+        {description.map((item, index) => (
+          <article className={`intro-panel intro-panel--${index + 1}`} key={item.label}>
+            <span className="intro-panel__number">0{index + 1}</span>
+            <h3>{item.label}</h3>
+            <p>{item.text}</p>
+            <span className="intro-panel__burst" aria-hidden="true">✦</span>
           </article>
         ))}
       </div>

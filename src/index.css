@@ -1,147 +1,26 @@
 :root {
-  color-scheme: dark;
-
-  --bg: oklch(0.07 0.012 255);
-  --surface: oklch(0.13 0.01 250);
-  --line: oklch(0.32 0.03 250 / 0.6);
-  --primary: oklch(0.62 0.17 250);
-  --primary-deep: oklch(0.42 0.15 250);
-  --primary-glow: oklch(0.78 0.14 250);
-  --accent: oklch(0.8 0.15 75);
-  --ink: oklch(0.95 0.01 250);
-  --muted: oklch(0.74 0.02 250);
-
-  --font-display: 'Unbounded', 'Arial Black', Impact, sans-serif;
-  --font-body: 'Golos Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-readout: 'Doto', 'Courier New', monospace;
-
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-
-  --z-canvas: 0;
-  --z-content: 1;
-  --z-nav: 10;
-  --z-boot: 20;
-
-  --gutter: clamp(1.25rem, 4vw, 4rem);
-  --measure: 62ch;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  background: var(--bg);
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  min-height: 100dvh;
-  background: var(--bg);
-  color: var(--ink);
+  color-scheme: light;
+  --paper: #fff7df;
+  --yellow: #ffdc22;
+  --ink: #10151e;
+  --blue: #087ed0;
+  --font-display: 'Bowlby One SC', 'Arial Black', Impact, sans-serif;
+  --font-body: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --gutter: clamp(1.15rem, 5vw, 5rem);
   font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-size: 18px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-h1,
-h2,
-h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-p {
-  margin: 0;
-  text-wrap: pretty;
-}
-
-a {
-  color: inherit;
-}
-
-button {
-  font: inherit;
-  color: inherit;
-}
-
-img,
-canvas {
-  display: block;
-  max-width: 100%;
-}
-
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-::selection {
-  background: var(--primary-deep);
-  color: var(--ink);
-}
-
-.readout {
-  font-family: var(--font-readout);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.skip-link {
-  position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: calc(var(--z-boot) + 1);
-  padding: 0.6rem 1rem;
-  background: var(--accent);
-  color: var(--bg);
-  font-weight: 600;
-  text-decoration: none;
-  transform: translateY(-200%);
-  transition: transform 200ms var(--ease-out-expo);
-}
-
-.skip-link:focus-visible {
-  transform: translateY(0);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; background: var(--paper); }
+body { min-width: 320px; min-height: 100vh; margin: 0; color: var(--ink); font-family: var(--font-body); font-size: 1.08rem; line-height: 1.45; overflow-x: hidden; }
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; }
+button, input { font: inherit; }
+img, svg { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid #ff8a00; outline-offset: 4px; }
+::selection { color: #111; background: var(--yellow); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
