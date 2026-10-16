@@ -11,7 +11,7 @@ function EventIcon({ type }) {
     </svg>
   )
 
-  if (type === 'esports') return (
+  if (type === 'esports' || type === 'battle-arena') return (
     <svg {...common}>
       <path d="M17 22c-6 0-10 4-11 11L3 47c-1 6 5 10 10 6l8-6h22l8 6c5 4 11 0 10-6l-3-14c-1-7-5-11-11-11H17Z" />
       <path className="event-icon__dpad" d="M17 29v14M10 36h14" fill="none" stroke="#111" strokeWidth="4" strokeLinecap="round" />
@@ -26,6 +26,15 @@ function EventIcon({ type }) {
       <path className="event-icon__handles" d="M19 14h-7v6c0 7 5 12 12 13M45 14h7v6c0 7-5 12-12 13" />
       <path className="event-icon__star" d="m32 13 2.3 4.7 5.2.8-3.8 3.7.9 5.2-4.6-2.5-4.6 2.5.9-5.2-3.8-3.7 5.2-.8z" />
       <path d="M29 39h6v9h-6zM23 49h18v7H23z" />
+    </svg>
+  )
+
+  if (type === 'school-track') return (
+    <svg {...common}>
+      <path className="event-icon__cap" d="m4 25 28-15 28 15-28 15L4 25Z" />
+      <path d="M15 31v12c9 8 25 8 34 0V31L32 40 15 31Z" />
+      <path className="event-icon__tassel" d="M58 26v18" fill="none" />
+      <circle cx="58" cy="47" r="3" />
     </svg>
   )
 
@@ -52,7 +61,7 @@ export default function Events() {
       </header>
       <div className="events__grid">
         {events.map((event, index) => (
-          <article className={`event event--${event.color}`} key={event.id} style={{ '--i': index }}>
+          <a className={`event event--${event.color}`} href={`/events/${event.id}`} key={event.id} style={{ '--i': index }} aria-label={`Explore ${event.name}`}>
             <span className="event__index">0{index + 1}</span>
             <span className={`event__icon event__icon--${event.id}`}><EventIcon type={event.id} /></span>
             <div className="event__body">
@@ -60,10 +69,9 @@ export default function Events() {
               <p className="event__blurb">{event.blurb}</p>
             </div>
             <span className="event__arrow" aria-hidden="true">↗</span>
-          </article>
+          </a>
         ))}
       </div>
-      <p className="events__footnote">More event details coming soon.</p>
     </section>
   )
 }

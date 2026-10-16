@@ -6,7 +6,7 @@ routes = [{ pattern = "genesis.campusdex.com/*", zone_name = "campusdex.com" }]
 [assets]
 directory = "dist"
 binding = "ASSETS"
-not_found_handling = "404-page"
+not_found_handling = "single-page-application"
 
 [[d1_databases]]
 binding = "DB"
