@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <header className="nav">
       <a href="#top" className="nav__mark" aria-label={`${fest.name} ${fest.year} home`}>
-        <img className="nav__logo" src="/images/genesis-logo.png" alt="" />
+        <img className="nav__logo" src="/images/genesis-logo.webp" width="480" height="189" alt="" />
       </a>
       <nav aria-label="Primary navigation">
         <a href="#events">Events</a>
