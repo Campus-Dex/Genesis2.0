@@ -193,6 +193,7 @@
 .hero__actions .btn { animation: rise .7s var(--ease-out-quint) .9s both; }
 .hero__actions .btn + .btn { animation-delay: .98s; }
 .countdown__clock b { animation: tick .35s var(--ease-out-quint); }
+.is-loading .nav, .is-loading .hero * { animation-play-state: paused; }
 .intro::before { animation: spin 90s linear infinite; }
 .finale__burst { animation: spin 40s linear infinite; }
 
