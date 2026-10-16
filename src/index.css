@@ -23,4 +23,3 @@ button, input { font: inherit; }
 img, svg { display: block; max-width: 100%; }
 :focus-visible { outline: 3px solid #ff8a00; outline-offset: 4px; }
 ::selection { color: #111; background: var(--yellow); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -2,7 +2,6 @@
 export const fest = {
   name: 'GENESIS',
   year: '2.0',
-  tagline: 'The annual tech fest.',
   dateLabel: '30–31 OCTOBER, 2026',
   venue: 'Delhi-NCR, Sonipat',
   host: 'Gateway Education',

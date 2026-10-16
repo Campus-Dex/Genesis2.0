@@ -19,7 +19,7 @@
 .btn--ghost:hover { color: #111; background: white; }
 .btn--large { min-height: 3.8rem; padding: 1rem 1.8rem; font-size: 1rem; }
 
-.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: min(900px, 100svh); min-height: max(760px, 100svh); overflow: hidden; padding: 9rem var(--gutter) 4.5rem; color: white; background: #108fe2; border-bottom: 8px solid #111; }
+.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: max(760px, 100svh); overflow: hidden; padding: 9rem var(--gutter) 4.5rem; color: white; background: #108fe2; border-bottom: 8px solid #111; }
 .hero::before { position: absolute; z-index: -1; inset: 0; content: ''; background: linear-gradient(180deg, #081a3a66 0%, transparent 38%, #06112b08 54%, #07102070 100%); }
 .hero::after { position: absolute; z-index: -1; inset: 0; content: ''; pointer-events: none; background-image: radial-gradient(#08152c66 1px, transparent 1.5px); background-size: 11px 11px; opacity: .36; mask-image: linear-gradient(90deg, #000 0, transparent 26%, transparent 72%, #000 100%); }
 .hero__campus { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 66%; }
@@ -84,8 +84,7 @@
 .event__icon--competitions svg { fill: #ffd51d; stroke-width: 2; transform: scale(.88, 1.02); }
 .event__icon--competitions .event-icon__handles { fill: none; stroke: #ffd51d; stroke-width: 5; }
 .event__icon--competitions .event-icon__star { fill: white; stroke: #111; stroke-width: 1.5; }
-.event__icon--exhibitions svg { transform: scale(.94); }
-.event__icon--exhibitions svg { fill: #ffd51d; }
+.event__icon--exhibitions svg { fill: #ffd51d; transform: scale(.94); }
 .event__icon--exhibitions .event-icon__screen { fill: #63ddf5; }
 .event__icon--exhibitions .event-icon__exhibit { fill: #ed492a; stroke-width: 1.5; }
 .event__icon--exhibitions .event-icon__spark { fill: white; stroke: #111; stroke-width: 1.5; }
@@ -131,7 +130,6 @@
   .event__name, .event--red .event__name { font-size: clamp(1.2rem, 2.6vw, 1.65rem); }
 }
 @media (max-width: 850px) {
-  .hero__burst { font-size: .82rem; }
   .intro__panels { grid-template-columns: 1fr 1fr; }
   .intro-panel--3 { grid-column: 1 / -1; min-height: 190px; }
 }
