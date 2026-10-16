@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "health_score": 45,
+    "business_type": "Event (one-off college tech fest, 30-31 Oct 2026, Sonipat)",
+    "top_findings": [
+      "Register CTAs loop to #register: no real registration path",
+      "No Event structured data",
+      "No Open Graph/Twitter tags or favicon",
+      "Every URL (incl. robots.txt, sitemap.xml) returns homepage with 200 (SPA fallback)",
+      "Thin, placeholder content (~125 words; no venue address, schedule, fee, contact)"
+    ],
+    "quick_wins": [
+      "Add Event + Organization JSON-LD to index.html",
+      "Add OG/Twitter tags, canonical, favicon",
+      "not_found_handling = 404-page + robots.txt + sitemap.xml",
+      "Preload hero image + 800w mobile images",
+      "Set the real registerUrl in src/content.js"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 55,
+      "what_works": [
+        "HTTPS + 301 from HTTP",
+        "No console errors",
+        "Googlebot-renderable",
+        "Lighthouse accessibility 100"
+      ],
+      "findings": [
+        {
+          "title": "SPA fallback returns homepage for every path",
+          "severity": "High",
+          "description": "/robots.txt, /sitemap.xml, /favicon.ico, /made-up-path all 200 text/html homepage",
+          "recommendation": "not_found_handling = \"404-page\" + public/404.html"
+        },
+        {
+          "title": "robots.txt invalid",
+          "severity": "High",
+          "description": "Served as HTML; Lighthouse: 40 errors",
+          "recommendation": "Add public/robots.txt"
+        },
+        {
+          "title": "No sitemap.xml",
+          "severity": "Medium",
+          "description": "Returns homepage HTML",
+          "recommendation": "Add one-URL public/sitemap.xml, submit in GSC"
+        },
+        {
+          "title": "No canonical",
+          "severity": "Medium",
+          "description": "No rel=canonical in raw or rendered HTML",
+          "recommendation": "Add canonical to index.html"
+        },
+        {
+          "title": "Client-rendered content",
+          "severity": "Medium",
+          "description": "Raw HTML body is only the loader",
+          "recommendation": "Prerender at build time"
+        },
+        {
+          "title": "Cloudflare bot challenge on all pages",
+          "severity": "Medium",
+          "description": "AI crawlers may be blocked",
+          "recommendation": "Review Security > Bots settings"
+        },
+        {
+          "title": "No security headers",
+          "severity": "Low",
+          "description": "No HSTS, X-Content-Type-Options, Referrer-Policy",
+          "recommendation": "public/_headers"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 35,
+      "what_works": [
+        "Clear dates and place above the fold",
+        "Consistent voice"
+      ],
+      "findings": [
+        {
+          "title": "Registration path is a placeholder",
+          "severity": "Critical",
+          "description": "All Register links -> #register",
+          "recommendation": "Set fest.registerUrl"
+        },
+        {
+          "title": "Thin content",
+          "severity": "High",
+          "description": "~125 words; no address, schedule, fee, eligibility, contact",
+          "recommendation": "Add a Key info block"
+        },
+        {
+          "title": "Event categories lack detail",
+          "severity": "High",
+          "description": "'More event details coming soon'",
+          "recommendation": "Name 2-3 events per category"
+        },
+        {
+          "title": "Weak E-E-A-T signals",
+          "severity": "Medium",
+          "description": "No organizer info, socials, past editions",
+          "recommendation": "Add organizer line and links"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 55,
+      "what_works": [
+        "Title 42 chars",
+        "Meta description with brand, place, dates",
+        "Single H1, logical headings"
+      ],
+      "findings": [
+        {
+          "title": "No Open Graph / Twitter tags",
+          "severity": "High",
+          "description": "Shared links have no preview",
+          "recommendation": "Add og:* + twitter:card + 1200x630 image"
+        },
+        {
+          "title": "No favicon",
+          "severity": "High",
+          "description": "/favicon.ico returns HTML",
+          "recommendation": "Add favicon + apple-touch-icon"
+        },
+        {
+          "title": "Image-only H1",
+          "severity": "Medium",
+          "description": "H1 text comes from img alt",
+          "recommendation": "Add visually hidden H1 text"
+        },
+        {
+          "title": "Title lacks location/year",
+          "severity": "Low",
+          "description": "'GENESIS 2.0 — Gateway Education Tech Fest'",
+          "recommendation": "Add Sonipat, Delhi-NCR, Oct 2026"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "No structured data",
+          "severity": "High",
+          "description": "0 blocks detected",
+          "recommendation": "Event + Organization JSON-LD (findings/schema.md)"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 66,
+      "what_works": [
+        "CLS ~0",
+        "TBT 0-30 ms"
+      ],
+      "findings": [
+        {
+          "title": "Mobile LCP 6.9 s",
+          "severity": "High",
+          "description": "Hero img not discoverable in initial HTML; render-blocking fonts; oversized images",
+          "recommendation": "Preload hero, self-host fonts, srcset"
+        },
+        {
+          "title": "Render-blocking Google Fonts",
+          "severity": "Medium",
+          "description": "~1.0 s mobile",
+          "recommendation": "Self-host fonts"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 30,
+      "what_works": [
+        "Meta description is factual"
+      ],
+      "findings": [
+        {
+          "title": "Content not in raw HTML",
+          "severity": "Medium",
+          "description": "Non-JS crawlers see only title/meta",
+          "recommendation": "Prerender"
+        },
+        {
+          "title": "No answer-ready facts",
+          "severity": "Medium",
+          "description": "No address/fee/eligibility text",
+          "recommendation": "Key info block"
+        },
+        {
+          "title": "No llms.txt",
+          "severity": "Low",
+          "description": "Returns homepage HTML; optional",
+          "recommendation": "Optional"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 75,
+      "what_works": [
+        "WebP",
+        "width/height set",
+        "Good alt text"
+      ],
+      "findings": [
+        {
+          "title": "No responsive images",
+          "severity": "Medium",
+          "description": "~350 KB wasted on mobile",
+          "recommendation": "800w variants + srcset"
+        },
+        {
+          "title": "No share image",
+          "severity": "High",
+          "description": "No og:image",
+          "recommendation": "Create 1200x630 og.jpg"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "This week",
+        "items": [
+          "Real registration URL",
+          "Event + Organization JSON-LD",
+          "OG/Twitter tags + share image + canonical",
+          "Favicon",
+          "404 handling + robots.txt + sitemap.xml",
+          "Preload hero + mobile images",
+          "Submit to Search Console"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Before 30 Oct",
+        "items": [
+          "Key info block",
+          "Named events per category",
+          "Text H1 + title with location/year",
+          "Self-host fonts",
+          "Organizer/social links"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "If site persists",
+        "items": [
+          "Prerender to static HTML",
+          "Cloudflare AI crawler policy",
+          "Security headers",
+          "Post-event highlights; keep URL for next edition"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "GSC indexing + Events report",
+          "Lighthouse mobile LCP per deploy",
+          "Registrations vs visits"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
