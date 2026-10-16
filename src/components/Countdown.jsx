@@ -28,13 +28,13 @@ export default function Countdown() {
           <p className="countdown__live">HAPPENING NOW!</p>
         ) : (
           <div className="countdown__clock" aria-label={`${time.d} days, ${time.h} hours until Genesis`}>
-            <span><b>{pad(time.d)}</b><small>DAYS</small></span>
+            <span><b key={time.d}>{pad(time.d)}</b><small>DAYS</small></span>
             <i aria-hidden="true">:</i>
-            <span><b>{pad(time.h)}</b><small>HRS</small></span>
+            <span><b key={time.h}>{pad(time.h)}</b><small>HRS</small></span>
             <i aria-hidden="true">:</i>
-            <span><b>{pad(time.m)}</b><small>MIN</small></span>
+            <span><b key={time.m}>{pad(time.m)}</b><small>MIN</small></span>
             <i aria-hidden="true">:</i>
-            <span><b>{pad(time.s)}</b><small>SEC</small></span>
+            <span><b key={time.s}>{pad(time.s)}</b><small>SEC</small></span>
           </div>
         )}
       </div>

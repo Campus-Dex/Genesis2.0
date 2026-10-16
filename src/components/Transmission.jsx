@@ -9,7 +9,7 @@ export default function Transmission() {
       </div>
       <div className="intro__panels">
         {description.map((item, index) => (
-          <article className={`intro-panel intro-panel--${index + 1}`} key={item.label}>
+          <article className={`intro-panel intro-panel--${index + 1}`} key={item.label} style={{ '--i': index }}>
             <span className="intro-panel__number">0{index + 1}</span>
             <h3>{item.label}</h3>
             <p>{item.text}</p>

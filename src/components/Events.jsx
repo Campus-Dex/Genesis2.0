@@ -52,7 +52,7 @@ export default function Events() {
       </header>
       <div className="events__grid">
         {events.map((event, index) => (
-          <article className={`event event--${event.color}`} key={event.id}>
+          <article className={`event event--${event.color}`} key={event.id} style={{ '--i': index }}>
             <span className="event__index">0{index + 1}</span>
             <span className={`event__icon event__icon--${event.id}`}><EventIcon type={event.id} /></span>
             <div className="event__body">
