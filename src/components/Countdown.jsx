@@ -5,14 +5,14 @@ const target = new Date('2026-10-30T09:00:00+05:30').getTime()
 function remaining() {
   const diff = Math.max(0, target - Date.now())
   const seconds = Math.floor(diff / 1000)
-  return { live: diff === 0, d: Math.floor(seconds / 86400), h: Math.floor((seconds % 86400) / 3600), m: Math.floor((seconds % 3600) / 60) }
+  return { live: diff === 0, d: Math.floor(seconds / 86400), h: Math.floor((seconds % 86400) / 3600), m: Math.floor((seconds % 3600) / 60), s: seconds % 60 }
 }
 const pad = (n) => String(n).padStart(2, '0')
 
 export default function Countdown() {
   const [time, setTime] = useState(remaining)
   useEffect(() => {
-    const timer = window.setInterval(() => setTime(remaining()), 60000)
+    const timer = window.setInterval(() => setTime(remaining()), 1000)
     return () => window.clearInterval(timer)
   }, [])
 
@@ -33,6 +33,8 @@ export default function Countdown() {
             <span><b>{pad(time.h)}</b><small>HRS</small></span>
             <i aria-hidden="true">:</i>
             <span><b>{pad(time.m)}</b><small>MIN</small></span>
+            <i aria-hidden="true">:</i>
+            <span><b>{pad(time.s)}</b><small>SEC</small></span>
           </div>
         )}
       </div>
