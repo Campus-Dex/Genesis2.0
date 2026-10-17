@@ -41,7 +41,7 @@ export const events = [
       { id: 'tech-charades', name: 'Tech Charades' },
       { id: 'slide-sizzle', name: 'Slide Sizzle' },
       { id: 'tech-poster-making', name: 'Tech Poster Making' },
-      { id: 'pitch-tank', name: 'Pitch Tank' },
+      { id: 'venture-vault', name: 'Venture Vault' },
       { id: 'brand-battle', name: 'Brand Battle' },
       { id: 'aangan', name: 'Aangan' },
     ],
