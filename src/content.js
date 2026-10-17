@@ -44,6 +44,7 @@ export const events = [
       { id: 'venture-vault', name: 'Venture Vault' },
       { id: 'brand-battle', name: 'Brand Battle' },
       { id: 'aangan', name: 'Aangan' },
+      { id: 'biz-quest', name: "Biz' Quest" },
     ],
   },
   {
