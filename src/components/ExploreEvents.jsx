@@ -25,7 +25,7 @@ export default function ExploreEvents({ onBack }) {
             </header>
             <div className="event-posters">
               {category.items.map((item, itemIndex) => (
-                <a className="event-poster" href={`/events/${category.id}/${item.id}`} key={item.id}>
+                <a className={`event-poster${item.id === 'bgmi' ? ' event-poster--bgmi' : ''}`} href={`/events/${category.id}/${item.id}`} key={item.id}>
                   <span className="event-poster__visual">
                     {item.poster ? (
                       <img src={item.poster} alt={`${item.name} event poster`} loading="lazy" />
