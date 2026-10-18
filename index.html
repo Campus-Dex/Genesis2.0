@@ -27,7 +27,8 @@
     <link rel="preload" href="/images/genesis-logo.webp" as="image" />
     <style>
       html.is-loading { overflow: hidden; }
-      .loader { position: fixed; z-index: 200; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem; overflow: hidden; background: #087ed0 linear-gradient(135deg, #108fe2, #063a90); box-shadow: 0 8px 0 #111; }
+      .loader { position: fixed; z-index: 200; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem; overflow: hidden; background: #087ed0 linear-gradient(135deg, #108fe2, #063a90); box-shadow: 0 8px 0 #111; }
+      .loader.is-active { display: flex; }
       .loader::before { position: absolute; z-index: -1; top: 50%; left: 50%; width: 220vmax; aspect-ratio: 1; margin: -110vmax 0 0 -110vmax; background: repeating-conic-gradient(#fff2 0deg 3deg, transparent 3deg 12deg); content: ''; animation: loader-spin 40s linear infinite; }
       .loader::after { position: absolute; z-index: -1; inset: 0; background-image: radial-gradient(#ffffff38 1px, transparent 1.5px); background-size: 11px 11px; content: ''; }
       .loader__logo { display: block; width: min(72vw, 420px); height: auto; filter: drop-shadow(5px 6px 0 #111); animation: loader-slam .8s cubic-bezier(.16, 1, .3, 1) both, loader-float 2.8s ease-in-out .8s infinite alternate; }
@@ -56,10 +57,13 @@
         const root = document.documentElement
         const loader = document.getElementById('loader')
         const navigation = performance.getEntriesByType('navigation')[0]
-        if (navigation?.type !== 'reload') {
+        const path = window.location.pathname.replace(/\/+$/, '') || '/'
+        const isHomePage = (path === '/' || path === '/index.html') && new URLSearchParams(window.location.search).get('page') !== 'explore'
+        if (!isHomePage || navigation?.type === 'back_forward') {
           loader.remove()
           return
         }
+        loader.classList.add('is-active')
         root.classList.add('is-loading')
         requestAnimationFrame(() => requestAnimationFrame(() => loader.classList.add('is-running')))
         const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))

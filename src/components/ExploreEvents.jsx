@@ -3,7 +3,9 @@ import { events } from '../content'
 export default function ExploreEvents({ onBack }) {
   return (
     <section className="events events--overview" id="events" aria-labelledby="events-heading">
-      <a className="explore-events__back" href="/" onClick={onBack}>← BACK TO HOME</a>
+      <div className="explore-events__top">
+        <a className="explore-events__back" href="/" onClick={onBack}>← BACK TO HOME</a>
+      </div>
       <header className="events__head">
         <div>
           <p className="section-kicker">ALL TRACKS • ALL EVENTS</p>
@@ -29,7 +31,6 @@ export default function ExploreEvents({ onBack }) {
                       <img src={item.poster} alt={`${item.name} event poster`} loading="lazy" />
                     ) : (
                       <span className="event-poster__placeholder">
-                        <span className="event-poster__number">{String(itemIndex + 1).padStart(2, '0')}</span>
                         <span className="event-poster__burst" aria-hidden="true">✦</span>
                         <span className="event-poster__label">EVENT POSTER</span>
                         <strong>{item.name}</strong>
@@ -37,7 +38,11 @@ export default function ExploreEvents({ onBack }) {
                       </span>
                     )}
                   </span>
-                  <span className="event-poster__title">{item.name}<span aria-hidden="true">↗</span></span>
+                  <span className="event-poster__title">
+                    <small className="event-poster__serial">{String(itemIndex + 1).padStart(2, '0')}</small>
+                    <span className="event-poster__name">{item.name}</span>
+                    <span aria-hidden="true">↗</span>
+                  </span>
                 </a>
               ))}
             </div>

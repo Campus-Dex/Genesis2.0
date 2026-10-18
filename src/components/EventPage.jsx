@@ -10,11 +10,13 @@ export default function EventPage({ category, item, eventNumber }) {
   }, [pageName])
 
   return (
-    <main id="main" className={`event-detail event-detail--${category.color}${item ? ' event-detail--poster-slot' : ''}`}>
+    <main id="main" className={`event-detail event-detail--${category.color}${item ? ' event-detail--poster-slot' : ''}${item?.id === 'bgmi' ? ' event-detail--bgmi' : ''}`}>
       <div className="event-detail__wrap">
-        <a className="event-detail__back" href={item ? `/events/${category.id}` : '/#events'}>
-          {item ? `← ${category.name.toUpperCase()}` : '← ALL CATEGORIES'}
-        </a>
+        <nav className="event-detail__navigation" aria-label="Event page navigation">
+          <a className="event-detail__back" href={item ? `/events/${category.id}` : '/?page=explore'}>
+            {item ? `← ${category.name.toUpperCase()}` : 'EXPLORE EVENTS ↗'}
+          </a>
+        </nav>
         <div className={`event-detail__layout${item ? '' : ' event-detail__layout--category'}`}>
           <div className="event-detail__copy">
             <div className="event-detail__heading">
@@ -25,9 +27,6 @@ export default function EventPage({ category, item, eventNumber }) {
               {!item && <p className="event-detail__blurb">{category.blurb}</p>}
               {item && <div className="event-detail__actions">
                 <a className="btn btn--primary" href={item.registrationUrl || fest.registerUrl}>Register now <span aria-hidden="true">↗</span></a>
-                <a className="btn btn--ghost" href={`/events/${category.id}`}>
-                  More {category.name} <span aria-hidden="true">←</span>
-                </a>
               </div>}
             </div>
           </div>
@@ -59,21 +58,22 @@ export default function EventPage({ category, item, eventNumber }) {
             <div className="event-detail__items">
               {category.items.map((categoryItem, index) => (
                 <a className={`event-detail__item${categoryItem.poster ? ' event-detail__item--has-poster' : ''}`} href={`/events/${category.id}/${categoryItem.id}`} key={categoryItem.id} aria-label={`${categoryItem.name} event details`}>
-                  <span className="event-detail__item-poster" aria-hidden="true">
+                  <span className={`event-detail__item-poster${categoryItem.poster ? ' event-detail__item-poster--image' : ''}`} aria-hidden="true">
                     {categoryItem.poster ? <img src={categoryItem.poster} alt="" /> : (
                       <>
                         <span className="event-detail__poster-kicker">GENESIS 2.0 <i>•</i> EVENT POSTER</span>
-                        <strong className="event-detail__item-title">{categoryItem.name}</strong>
+                        <strong className={`event-detail__item-title${categoryItem.id === 'bgmi' ? ' event-detail__item-title--bgmi' : ''}`}>{categoryItem.name}</strong>
                         <span className="event-detail__item-art"><i>✦</i><small>ARTWORK<br />PREVIEW</small></span>
                         <strong className="event-detail__poster-date">{fest.dateLabel}</strong>
                         <small className="event-detail__item-venue">{fest.venue.toUpperCase()}</small>
                       </>
                     )}
                   </span>
-                  <span className="event-detail__item-copy">
+                  {!categoryItem.poster && <span className="event-detail__item-copy">
                     <small>{String(index + 1).padStart(2, '0')}</small>
-                  </span>
-                  <span aria-hidden="true">↗</span>
+                  </span>}
+                  {categoryItem.poster && <strong className="event-detail__item-poster-title"><small className="event-detail__item-poster-number">{String(index + 1).padStart(2, '0')}</small>{categoryItem.name}</strong>}
+                  {!categoryItem.poster && <span aria-hidden="true">↗</span>}
                 </a>
               ))}
             </div>
