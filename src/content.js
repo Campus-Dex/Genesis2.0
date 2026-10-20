@@ -40,7 +40,7 @@ export const events = [
       { id: 'tech-quiz', name: 'Tech Trivia', poster: '/images/event-posters/tech-trivia.webp', registrationUrl: 'https://forms.gle/qRsCMmBgDnxo7m5b8' },
       { id: 'tech-charades', name: 'Tech Charades', poster: '/images/event-posters/tech-charades.webp', registrationUrl: 'https://forms.gle/ArD97Kz8E9nXfjgh6' },
       { id: 'slide-sizzle', name: 'Slide Sizzle', poster: '/images/event-posters/slide-sizzle.webp', registrationUrl: 'https://forms.gle/bKMjc6tqoiNj41TL7' },
-      { id: 'tech-poster-making', name: 'Tech Canvas', registrationUrl: 'https://forms.gle/JsB3cUa4id5xFfvf8' },
+      { id: 'tech-poster-making', name: 'That Tech Canvas', poster: '/images/event-posters/tech-canvas.webp', registrationUrl: 'https://forms.gle/JsB3cUa4id5xFfvf8' },
       { id: 'venture-vault', name: 'Venture Vault', registrationUrl: 'https://forms.gle/nc3vDPg8b1sb2SaEA' },
       { id: 'brand-battle', name: 'Brand Battle', registrationUrl: 'https://forms.gle/1xCHJM34nCiWrCQK7' },
       { id: 'aangan', name: 'Aangan' },
