@@ -29,9 +29,9 @@ export const events = [
     id: 'battle-arena', name: 'Battle Arena Games', blurb: 'Bring your team. Take your place in the arena.', color: 'purple', image: 'card-esports.jpg', alt: 'Battle arena games artwork',
     items: [
       { id: 'bgmi', name: 'BGMI Championship', poster: '/images/event-posters/bgmi-championship.webp', registrationUrl: 'https://forms.gle/1E2ouFhJCPWAB5u9A' },
-      { id: 'free-fire-max', name: 'Free Fire MAX' },
+      { id: 'free-fire-max', name: 'Free Fire MAX', registrationUrl: 'https://forms.gle/CdB9wpx3X3x8bNAQ8' },
       { id: 'tekken', name: 'Tekken' },
-      { id: 'ludo', name: 'Ludo' },
+      { id: 'ludo', name: 'Ludo Mania: Clash of Dice', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
     ],
   },
   {
