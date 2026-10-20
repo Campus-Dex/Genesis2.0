@@ -14,14 +14,14 @@ export const description = [
   { label: 'COMPETE + COLLABORATE', text: 'Find your people, join the challenge, and make your move.' },
 ]
 
-// Add poster: '/images/event-posters/<event-id>.jpg' to any item when its poster is ready.
+// Event posters are stored as optimized WebP files in /images/event-posters/.
 export const events = [
   {
     id: 'technical', name: 'Technical Events', blurb: 'Build, solve, experiment, and show what you can do.', color: 'blue', image: 'card-robotics.jpg', alt: 'Technical event artwork',
     items: [
-      { id: 'vibe-coding', name: 'Vibe Coding', poster: '/images/event-posters/vibe-coding.png' },
-      { id: 'ui-ux-design', name: 'UI/UX Design' },
-      { id: 'cyber-crime-investigator', name: 'Cyber Crime Investigator' },
+      { id: 'vibe-coding', name: 'Vibeathon', poster: '/images/event-posters/vibeathon.webp' },
+      { id: 'ui-ux-design', name: 'Pixel Perfect', poster: '/images/event-posters/pixel-perfect.webp' },
+      { id: 'cyber-crime-investigator', name: 'Cyber Sleuths', poster: '/images/event-posters/cyber-sleuths.webp' },
       { id: '3d-modeling-sprint', name: '3D Modeling Sprint' },
     ],
   },
@@ -37,9 +37,9 @@ export const events = [
   {
     id: 'competitions', name: 'Competitions', blurb: 'Step up, take on the challenge, and go for the win.', color: 'red', image: 'card-quiz.jpg', alt: 'Competition artwork',
     items: [
-      { id: 'tech-quiz', name: 'Tech Quiz' },
-      { id: 'tech-charades', name: 'Tech Charades' },
-      { id: 'slide-sizzle', name: 'Slide Sizzle' },
+      { id: 'tech-quiz', name: 'Tech Trivia', poster: '/images/event-posters/tech-trivia.webp' },
+      { id: 'tech-charades', name: 'Tech Charades', poster: '/images/event-posters/tech-charades.webp' },
+      { id: 'slide-sizzle', name: 'Slide Sizzle', poster: '/images/event-posters/slide-sizzle.webp' },
       { id: 'tech-poster-making', name: 'Tech Poster Making' },
       { id: 'venture-vault', name: 'Venture Vault' },
       { id: 'brand-battle', name: 'Brand Battle' },
@@ -49,7 +49,7 @@ export const events = [
   },
   {
     id: 'exhibitions', name: 'Exhibitions', blurb: 'Explore ideas and projects from across campus.', color: 'cyan', image: 'card-expo.jpg', alt: 'Exhibition artwork',
-    items: [{ id: 'project-expo', name: 'Project Expo' }],
+    items: [{ id: 'project-expo', name: 'InnovateX', poster: '/images/event-posters/innovatex.webp' }],
   },
   {
     id: 'school-track', name: 'School Track', blurb: 'Bring bold ideas, share what you create, and take the stage.', color: 'yellow', image: 'card-workshops.jpg', alt: 'School track artwork',
