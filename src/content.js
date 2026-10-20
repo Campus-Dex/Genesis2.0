@@ -31,7 +31,7 @@ export const events = [
       { id: 'bgmi', name: 'BGMI Championship', poster: '/images/event-posters/bgmi-championship.webp', registrationUrl: 'https://forms.gle/1E2ouFhJCPWAB5u9A' },
       { id: 'free-fire-max', name: 'Free Fire MAX', registrationUrl: 'https://forms.gle/CdB9wpx3X3x8bNAQ8' },
       { id: 'tekken', name: 'Tekken' },
-      { id: 'ludo', name: 'Ludo Mania: Clash of Dice', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
+      { id: 'ludo', name: 'Ludo Mania: Clash of Dice', poster: '/images/event-posters/ludo-mania.webp', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
     ],
   },
   {
@@ -41,10 +41,10 @@ export const events = [
       { id: 'tech-charades', name: 'Tech Charades', poster: '/images/event-posters/tech-charades.webp', registrationUrl: 'https://forms.gle/ArD97Kz8E9nXfjgh6' },
       { id: 'slide-sizzle', name: 'Slide Sizzle', poster: '/images/event-posters/slide-sizzle.webp', registrationUrl: 'https://forms.gle/bKMjc6tqoiNj41TL7' },
       { id: 'tech-poster-making', name: 'That Tech Canvas', poster: '/images/event-posters/tech-canvas.webp', registrationUrl: 'https://forms.gle/JsB3cUa4id5xFfvf8' },
-      { id: 'venture-vault', name: 'Venture Vault', registrationUrl: 'https://forms.gle/nc3vDPg8b1sb2SaEA' },
-      { id: 'brand-battle', name: 'Brand Battle', registrationUrl: 'https://forms.gle/1xCHJM34nCiWrCQK7' },
+      { id: 'venture-vault', name: 'Venture Vault', poster: '/images/event-posters/venture-vault.webp', registrationUrl: 'https://forms.gle/nc3vDPg8b1sb2SaEA' },
+      { id: 'brand-battle', name: 'Brand Battle', poster: '/images/event-posters/brand-battle.webp', registrationUrl: 'https://forms.gle/1xCHJM34nCiWrCQK7' },
       { id: 'aangan', name: 'Aangan' },
-      { id: 'biz-quest', name: "Biz' Quest", registrationUrl: 'https://forms.gle/6RYLDRSTJ97je525A' },
+      { id: 'biz-quest', name: "Biz' Quest", poster: '/images/event-posters/biz-quest.webp', registrationUrl: 'https://forms.gle/6RYLDRSTJ97je525A' },
     ],
   },
   {
