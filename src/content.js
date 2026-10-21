@@ -23,6 +23,7 @@ export const events = [
       { id: 'ui-ux-design', name: 'Pixel Perfect', poster: '/images/event-posters/pixel-perfect.webp', registrationUrl: 'https://forms.gle/7wSW1rswfWCWKW4y7' },
       { id: 'cyber-crime-investigator', name: 'Cyber Sleuths', poster: '/images/event-posters/cyber-sleuths.webp', registrationUrl: 'https://forms.gle/eHphSNYM2k3cZEV9A' },
       { id: '3d-modeling-sprint', name: '3D Modeling Sprint', poster: '/images/event-posters/3d-modeling-sprint.webp', registrationUrl: 'https://forms.gle/wTsRm9edzXumekyG8' },
+      { id: 'project-expo', name: 'InnovateX', poster: '/images/event-posters/innovatex.webp', registrationUrl: 'https://forms.gle/dp7GrveHGXY6ghNa6' },
     ],
   },
   {
@@ -48,11 +49,7 @@ export const events = [
     ],
   },
   {
-    id: 'exhibitions', name: 'Exhibitions', blurb: 'Explore ideas and projects from across campus.', color: 'cyan', image: 'card-expo.jpg', alt: 'Exhibition artwork',
-    items: [{ id: 'project-expo', name: 'InnovateX', poster: '/images/event-posters/innovatex.webp', registrationUrl: 'https://forms.gle/dp7GrveHGXY6ghNa6' }],
-  },
-  {
-    id: 'school-track', name: 'School Track', blurb: 'Bring bold ideas, share what you create, and take the stage.', color: 'yellow', image: 'card-workshops.jpg', alt: 'School track artwork',
+    id: 'school-track', name: 'School Track', blurb: 'Bring bold ideas, share what you create, and take the stage.', color: 'cyan', image: 'card-workshops.jpg', alt: 'School track artwork',
     items: [
       { id: 'tech-debate', name: 'Tech Debate' },
       { id: 'startup-idea', name: 'Start-up Idea' },
