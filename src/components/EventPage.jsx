@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
-import { fest } from '../content'
+import { eventInformation, fest, generalEventRules } from '../content'
 
 export default function EventPage({ category, item, eventNumber }) {
   const pageName = item?.name ?? category.name
+  const info = item ? eventInformation[item.id] : null
   useEffect(() => {
     const previousTitle = document.title
     document.title = `${pageName} — GENESIS 2.0`
@@ -19,7 +20,7 @@ export default function EventPage({ category, item, eventNumber }) {
         </nav>
         <div className={`event-detail__layout${item ? '' : ' event-detail__layout--category'}`}>
           <div className="event-detail__copy">
-            <div className="event-detail__heading">
+            <div className={`event-detail__heading${pageName.length > 16 ? ' event-detail__heading--long' : ''}${pageName.split(/\s+/).some(word => word.length >= 9) ? ' event-detail__heading--wide-word' : ''}`}>
               <p className="event-detail__kicker">{item ? category.name : 'GENESIS 2.0'} <span>•</span> {item ? `EVENT ${String(eventNumber).padStart(2, '0')}` : 'EVENT CATEGORY'}</p>
               <h1>{pageName}</h1>
             </div>
@@ -49,8 +50,36 @@ export default function EventPage({ category, item, eventNumber }) {
             }
           </figure>}
         </div>
-        {item && <div className="event-detail__facts event-detail__facts--single">
-          <p>Event rules and schedule will be announced soon.</p>
+        {item && (info ? <section className="event-detail__information" aria-label={`${item.name} event information`}>
+          <div className="event-detail__facts event-detail__facts--rulebook">
+            {info.facts.map(([label, value]) => <div key={label}><small>{label}</small><strong>{value}</strong></div>)}
+          </div>
+          {info.notes?.length > 0 && <div className="event-detail__notes">
+            {info.notes.map(([label, value]) => <article key={label}><small>{label}</small><p>{value}</p></article>)}
+          </div>}
+          {(info.coordinators || info.head || info.faculty) && <div className="event-detail__contacts">
+            {info.coordinators && <p><small>EVENT COORDINATORS</small><strong>{info.coordinators}</strong></p>}
+            {info.head && <p><small>HEAD COORDINATOR</small><strong>{info.head}</strong></p>}
+            {info.faculty && <p><small>FACULTY COORDINATORS</small><strong>{info.faculty}</strong></p>}
+          </div>}
+          <div className="event-detail__rules">
+            {info.sections.map(section => <details key={section.title}>
+              <summary>{section.title}</summary>
+              <ul>{section.items.map((entry, index) => <li key={`${section.title}-${index}`}>{entry}</li>)}</ul>
+            </details>)}
+            <details>
+              <summary>General rules for all participants</summary>
+              <ul>{generalEventRules.map((entry, index) => <li key={`general-${index}`}>{entry}</li>)}</ul>
+            </details>
+          </div>
+        </section> : <div className="event-detail__facts event-detail__facts--single">
+          <p>Schedule, fees and event-specific rules are not listed in the rulebook.</p>
+        </div>)}
+        {item && !info && <div className="event-detail__rules event-detail__rules--standalone">
+          <details>
+            <summary>General rules for all participants</summary>
+            <ul>{generalEventRules.map((entry, index) => <li key={`general-${index}`}>{entry}</li>)}</ul>
+          </details>
         </div>}
         {!item && (
           <section className="event-detail__list" aria-label={`Events in ${category.name}`}>
