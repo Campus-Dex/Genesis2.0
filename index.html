@@ -21,6 +21,7 @@
     <meta property="og:image:alt" content="GENESIS 2.0 — The annual tech fest, 30–31 October, 2026, over a comic-style campus with event banners" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preload" href="/fonts/bowlby-one-sc-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/barlow-condensed-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/images/genesis-campus-comic-events-portrait.webp" as="image" fetchpriority="high" media="(max-aspect-ratio: 3/4)" />
     <link rel="preload" href="/images/genesis-campus-comic-events.webp" as="image" fetchpriority="high" media="not all and (max-aspect-ratio: 3/4)" />
@@ -60,7 +61,7 @@
         const path = window.location.pathname.replace(/\/+$/, '') || '/'
         const isHomePage = (path === '/' || path === '/index.html') && new URLSearchParams(window.location.search).get('page') !== 'explore'
         if (!isHomePage || navigation?.type === 'back_forward') {
-          loader.remove()
+          loader?.remove()
           return
         }
         loader.classList.add('is-active')

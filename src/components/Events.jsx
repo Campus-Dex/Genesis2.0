@@ -57,7 +57,7 @@ export default function Events() {
           <p className="section-kicker">PICK YOUR PLAYGROUND</p>
           <h2 id="events-heading">Find your <span>thing.</span></h2>
         </div>
-        <p className="events__note">Four ways to make<br />your mark.</p>
+        <p className="events__note">Six tracks to make<br />your mark.</p>
       </header>
       <div className="events__grid">
         {events.map((event, index) => (

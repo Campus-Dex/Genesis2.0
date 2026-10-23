@@ -17,35 +17,45 @@ export const description = [
 // Event posters are stored as optimized WebP files in /images/event-posters/.
 export const events = [
   {
-    id: 'technical', name: 'Technical Events', blurb: 'Build, solve, experiment, and show what you can do.', color: 'blue', image: 'card-robotics.jpg', alt: 'Technical event artwork',
+    id: 'technical', name: 'Technology & Innovation', blurb: 'Build, solve, experiment, and bring new ideas to life.', color: 'blue', image: 'card-robotics.jpg', alt: 'Technology and innovation event artwork',
     items: [
-      { id: 'vibe-coding', name: 'Vibeathon', poster: '/images/event-posters/vibeathon.webp', registrationUrl: 'https://forms.gle/dtyDXF1P8yURqWcP8' },
-      { id: 'ui-ux-design', name: 'Pixel Perfect', poster: '/images/event-posters/pixel-perfect.webp', registrationUrl: 'https://forms.gle/7wSW1rswfWCWKW4y7' },
-      { id: 'cyber-crime-investigator', name: 'Cyber Sleuths', poster: '/images/event-posters/cyber-sleuths.webp', registrationUrl: 'https://forms.gle/eHphSNYM2k3cZEV9A' },
-      { id: '3d-modeling-sprint', name: '3D Modeling Sprint', poster: '/images/event-posters/3d-modeling-sprint.webp', registrationUrl: 'https://forms.gle/wTsRm9edzXumekyG8' },
+      { id: 'vibe-coding', name: 'VibeaThon', poster: '/images/event-posters/vibeathon.webp', registrationUrl: 'https://forms.gle/dtyDXF1P8yURqWcP8' },
       { id: 'project-expo', name: 'InnovateX', poster: '/images/event-posters/innovatex.webp', registrationUrl: 'https://forms.gle/dp7GrveHGXY6ghNa6' },
+      { id: 'cyber-crime-investigator', name: 'Cyber Sleuths', poster: '/images/event-posters/cyber-sleuths.webp', registrationUrl: 'https://forms.gle/eHphSNYM2k3cZEV9A' },
     ],
   },
   {
-    id: 'battle-arena', name: 'Battle Arena Games', blurb: 'Bring your team. Take your place in the arena.', color: 'purple', image: 'card-esports.jpg', alt: 'Battle arena games artwork',
+    id: 'design-architecture', name: 'Design & Architecture', blurb: 'Shape interfaces, models, and spaces through thoughtful design.', color: 'cyan', image: 'card-expo.jpg', alt: 'Design and architecture event artwork',
     items: [
-      { id: 'bgmi', name: 'BGMI Championship', poster: '/images/event-posters/bgmi-championship.webp', registrationUrl: 'https://forms.gle/1E2ouFhJCPWAB5u9A' },
-      { id: 'free-fire-max', name: 'Free Fire MAX', poster: '/images/event-posters/free-fire-max.webp', registrationUrl: 'https://forms.gle/CdB9wpx3X3x8bNAQ8' },
-      { id: 'tekken', name: 'Tekken', poster: '/images/event-posters/tekken.webp', registrationUrl: 'https://forms.gle/5UaG9DcEdGb99WFX9' },
-      { id: 'ludo', name: 'Ludo Mania: Clash of Dice', poster: '/images/event-posters/ludo-mania.webp', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
+      { id: 'ui-ux-design', name: 'Pixel Perfect', poster: '/images/event-posters/pixel-perfect.webp', registrationUrl: 'https://forms.gle/7wSW1rswfWCWKW4y7' },
+      { id: '3d-modeling-sprint', name: '3D Modeling Sprint', poster: '/images/event-posters/3d-modeling-sprint.webp', registrationUrl: 'https://forms.gle/wTsRm9edzXumekyG8' },
+      { id: 'aangan', name: 'Architectural Design Competition', poster: '/images/event-posters/architectural-design-competition.webp', registrationUrl: 'https://forms.gle/dqWLgr1HCdKnM5Ai8' },
     ],
   },
   {
-    id: 'competitions', name: 'Competitions', blurb: 'Step up, take on the challenge, and go for the win.', color: 'red', image: 'card-quiz.jpg', alt: 'Competition artwork',
+    id: 'business-entrepreneurship', name: 'Business & Entrepreneurship', blurb: 'Turn bold ideas into brands, ventures, and success.', color: 'red', image: 'card-hackathon.jpg', alt: 'Business and entrepreneurship event artwork',
+    items: [
+      { id: 'venture-vault', name: 'Venture Vault', poster: '/images/event-posters/venture-vault.webp', registrationUrl: 'https://forms.gle/nc3vDPg8b1sb2SaEA' },
+      { id: 'brand-battle', name: 'Brand Battle', poster: '/images/event-posters/brand-battle.webp', registrationUrl: 'https://forms.gle/1xCHJM34nCiWrCQK7' },
+      { id: 'biz-quest', name: 'Biz Quest', poster: '/images/event-posters/biz-quest.webp', registrationUrl: 'https://forms.gle/6RYLDRSTJ97je525A' },
+    ],
+  },
+  {
+    id: 'competitions', name: 'Quiz & Creative', blurb: 'Test your knowledge and show your creative side.', color: 'purple', image: 'card-quiz.jpg', alt: 'Quiz and creative event artwork',
     items: [
       { id: 'tech-quiz', name: 'Tech Trivia', poster: '/images/event-posters/tech-trivia.webp', registrationUrl: 'https://forms.gle/qRsCMmBgDnxo7m5b8' },
       { id: 'tech-charades', name: 'Tech Charades', poster: '/images/event-posters/tech-charades.webp', registrationUrl: 'https://forms.gle/ArD97Kz8E9nXfjgh6' },
       { id: 'slide-sizzle', name: 'Slide Sizzle', poster: '/images/event-posters/slide-sizzle.webp', registrationUrl: 'https://forms.gle/bKMjc6tqoiNj41TL7' },
-      { id: 'tech-poster-making', name: 'That Tech Canvas', poster: '/images/event-posters/tech-canvas.webp', registrationUrl: 'https://forms.gle/JsB3cUa4id5xFfvf8' },
-      { id: 'venture-vault', name: 'Venture Vault', poster: '/images/event-posters/venture-vault.webp', registrationUrl: 'https://forms.gle/nc3vDPg8b1sb2SaEA' },
-      { id: 'brand-battle', name: 'Brand Battle', poster: '/images/event-posters/brand-battle.webp', registrationUrl: 'https://forms.gle/1xCHJM34nCiWrCQK7' },
-      { id: 'aangan', name: 'Architectural Design Competition', poster: '/images/event-posters/architectural-design-competition.webp', registrationUrl: 'https://forms.gle/dqWLgr1HCdKnM5Ai8' },
-      { id: 'biz-quest', name: "Biz' Quest", poster: '/images/event-posters/biz-quest.webp', registrationUrl: 'https://forms.gle/6RYLDRSTJ97je525A' },
+      { id: 'tech-poster-making', name: 'The Tech Canvas', poster: '/images/event-posters/tech-canvas.webp', registrationUrl: 'https://forms.gle/JsB3cUa4id5xFfvf8' },
+    ],
+  },
+  {
+    id: 'battle-arena', name: 'E-Sports', blurb: 'Bring your team. Take your place in the arena.', color: 'purple', image: 'card-esports.jpg', alt: 'E-sports event artwork',
+    items: [
+      { id: 'bgmi', name: 'BGMI Championship', poster: '/images/event-posters/bgmi-championship.webp', registrationUrl: 'https://forms.gle/1E2ouFhJCPWAB5u9A' },
+      { id: 'free-fire-max', name: 'Free Fire Max Championship', poster: '/images/event-posters/free-fire-max.webp', registrationUrl: 'https://forms.gle/CdB9wpx3X3x8bNAQ8' },
+      { id: 'tekken', name: 'Tekken Tournament', poster: '/images/event-posters/tekken.webp', registrationUrl: 'https://forms.gle/5UaG9DcEdGb99WFX9' },
+      { id: 'ludo', name: 'Ludo Mania', poster: '/images/event-posters/ludo-mania.webp', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
     ],
   },
   {

@@ -20,8 +20,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { min-width: 320px; scroll-behavior: smooth; background: var(--paper); }
-body { min-width: 320px; min-height: 100vh; margin: 0; color: var(--ink); font-family: var(--font-body); font-size: 1.08rem; line-height: 1.45; overflow-x: hidden; }
+html { min-width: 320px; scroll-behavior: smooth; background: var(--paper); overflow-x: clip; }
+body { min-width: 320px; min-height: 100vh; margin: 0; color: var(--ink); font-family: var(--font-body); font-size: 1.05rem; line-height: 1.45; overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 h1, h2, h3, p { margin: 0; }
 a { color: inherit; }
 button, input { font: inherit; }
