@@ -5,7 +5,7 @@ export const fest = {
   dateLabel: '30–31 OCTOBER, 2026',
   venue: 'Delhi-NCR, Sonipat',
   host: 'Gateway Education',
-  registerUrl: '/?page=explore',
+  registerUrl: 'https://forms.gle/j6BVEkKUKc4cXCrz7',
 }
 
 export const description = [
@@ -58,28 +58,28 @@ export const events = [
   },
 ]
 
-// Event facts and rules transcribed from the Genesis 2.0 Rulebook.
+// Event facts and rules transcribed from the current Genesis 2.0 rulebook.
 export const eventInformation = {
   'vibe-coding': {
     facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹3,100; 2nd: ₹2,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 10:00 AM–3:00 PM'], ['VENUE', 'Room 112, GIET']],
-    notes: [['Theme', 'Cybersecurity, research, education and e-commerce']],
+    notes: [['Theme', 'Cybersecurity, research, education and e-commerce'], ['Tracks', 'Finance and security, research, education, smart cities, e-commerce and entertainment']],
     coordinators: 'Shivam (8708669220), Sonal, Nancy and Nisha',
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Ms. Namrata',
     sections: [
-      { title: 'Rules & instructions', items: ['Teams may have a maximum of two students.', 'AI coding tools are permitted.', 'Build the solution during the competition; pre-built projects cannot be submitted as original work.', 'Demonstrate all mandatory features. Judges may ask teams to explain, test or modify code.', 'Use sample or synthetic data. Do not upload confidential or personal information to public AI tools.', 'Disclose major limitations and test the application before the demonstration.'] },
+      { title: 'Rules & instructions', items: ['Participation is solo or duo, with a maximum of two students per team.', 'AI coding tools are permitted. Build the solution during the competition; pre-built projects cannot be submitted as original work.', 'Demonstrate all mandatory features. Judges may ask teams to explain, test or modify code.', 'Use sample or synthetic data. Do not upload confidential or personal information to public AI tools.', 'Disclose major limitations and test the application before the demonstration.', 'Bring your own laptop and ensure required software is installed and working. Arrive on time and follow organizer instructions.', 'Maintain professional conduct throughout the event.'] },
       { title: 'Judging criteria', items: ['Innovation and problem-solving — 20%', 'Functional implementation — 25%', 'AI integration and prompt engineering — 20%', 'UI/UX and user experience — 10%', 'Testing, reliability and code understanding — 15%', 'Presentation and demonstration — 10%'] },
     ],
   },
   'project-expo': {
-    facts: [['FORMAT', 'Team of 1–3'], ['ENTRY FEE', '₹50 per team member'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 11:00 AM–3:00 PM'], ['VENUE', 'Room 112, GIET']],
-    notes: [['Category', 'College-level technical project exhibition'], ['Theme', 'Innovation, technology, creativity and problem-solving'], ['Bring', 'Your own laptop. Topics are announced on the spot.']],
-    coordinators: 'Lakshay Antil (7015886701), Rajat (8168702481)',
+    facts: [['FORMAT', 'Team of 1–3'], ['ENTRY FEE', '₹50 per team member'], ['PRIZES', '1st: ₹3,100; 2nd: ₹2,100, goodies, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 11:00 AM–3:00 PM'], ['VENUE', 'Room 112, first floor, GIET']],
+    notes: [['Category', 'College-level technical project exhibition'], ['Theme', 'Innovation, technology, creativity and problem-solving'], ['Project areas', 'AI/ML, web and mobile apps, IoT, robotics, cybersecurity, smart cities, healthcare, data science, education and open innovation'], ['Rounds', 'Round 1: 2 hours. Shortlisted teams get 1 hour in Round 2.']],
+    coordinators: 'Rajat Sharma (8168702481), Lakshay Antil (7015886701)',
     head: 'Aayush (9811852293), Harshit (8287861136)',
-    faculty: 'Mr. Anil Arora, Mr. Vikas Kuchhal',
+    faculty: 'Mr. Anil Kumar, Mr. Vikas Kuchhal',
     sections: [
-      { title: 'Rules & instructions', items: ['Teams must have one to three members.', 'Report at least 15 minutes before the start and bring a valid institute ID; entry without ID is not allowed.', 'Specific technical or creative topics will be announced at the venue.', 'Round 1 is two hours. Shortlisted teams get one hour for Round 2.', 'Registration fees are non-refundable.'] },
-      { title: 'Evaluation criteria', items: ['Relevance to the technical theme', 'Creativity and originality', 'Artistic quality and layout', 'Clarity of the technical message', 'Clarity, confidence and precision during the 1–2 minute judge interaction'] },
+      { title: 'Rules & instructions', items: ['Teams must have one to three members.', 'Report at least 15 minutes before the start and bring a valid school or college ID; entry without ID is not allowed.', 'Bring a working, prepared project and your own laptop. Present the project, its features and implementation.', 'Registration fees are non-refundable.'] },
+      { title: 'Evaluation criteria', items: ['Innovation and originality', 'Technical implementation and working', 'Real-world relevance and impact', 'Presentation and demonstration', 'Team understanding and responses to judges’ questions'] },
     ],
   },
   'cyber-crime-investigator': {
@@ -94,7 +94,7 @@ export const eventInformation = {
     ],
   },
   'ui-ux-design': {
-    facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 1:00 PM–4:00 PM'], ['VENUE', 'Room 107, GIET']],
+    facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 1:00 PM–4:00 PM'], ['VENUE', 'Room 305, GIET']],
     coordinators: 'Anoop (9253581935), Palak Sharma',
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Ms. Priya',
@@ -104,17 +104,17 @@ export const eventInformation = {
     ],
   },
   '3d-modeling-sprint': {
-    facts: [['FORMAT', 'Solo'], ['ENTRY FEE', '₹50'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 10:00 AM–3:00 PM'], ['VENUE', 'Room 112, GCAD']],
+    facts: [['FORMAT', 'Solo'], ['ELIGIBILITY', 'B.Arch students in 1st–3rd year'], ['ENTRY FEE', '₹50'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 9:00 AM–12:00 PM'], ['VENUE', 'Room 112, GCAD']],
     notes: [['Eligibility', 'B.Arch students in 1st–3rd year'], ['Description', 'Create a 3D architectural model using SketchUp, Revit or another approved modelling tool.']],
     coordinators: 'Ayush Kumar Srivastava (9555916493), Gaurav Aggarwal (9371186226)',
     faculty: 'Ar. Gurdeep Bagga, Ar. Arya Nair',
     sections: [
-      { title: 'Rules & instructions', items: ['Participation is individual and open to B.Arch students in 1st–3rd year.', 'The design brief is shared at the event.', 'Bring your own laptop and prepare a digital 3D architectural model based on the given theme and brief.'] },
+      { title: 'Rules & instructions', items: ['Participation is individual and open to B.Arch students in 1st–3rd year.', 'The design brief is shared on the spot.', 'Bring your own laptop and prepare a digital 3D architectural model based on the given theme and brief, using SketchUp, Revit or another approved modelling tool.'] },
       { title: 'Evaluation', items: ['Models are evaluated on quality, creativity, accuracy and relevance to the given theme and design brief.'] },
     ],
   },
   'venture-vault': {
-    facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 10:00 AM–1:30 PM'], ['VENUE', 'Room 403, GIET']],
+    facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹3,100; 2nd: ₹2,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 10:00–11:30 AM'], ['VENUE', 'Room 403, GIET']],
     notes: [['Theme', 'Think it. Pitch it. Win it.']],
     coordinators: 'Garvita, Kashish',
     head: 'Aayush (9811852293), Harshit (8287861136)',
@@ -125,13 +125,13 @@ export const eventInformation = {
     ],
   },
   'tech-quiz': {
-    facts: [['FORMAT', 'Solo; team mode may be announced by organizers'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 10:30 AM–12:30 PM'], ['VENUE', 'Room 203, GIET']],
+    facts: [['FORMAT', 'Solo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 10:30 AM–12:30 PM'], ['VENUE', 'Room 203, GIET']],
     notes: [['Theme', 'Technical knowledge, innovation and general IT awareness']],
     coordinators: 'Nisha Saini, Riya Singh',
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Ms. Priya Tyagi, Ms. Nutan Khushik',
     sections: [
-      { title: 'Rules & instructions', items: ['Report at least 15 minutes before the event.', 'Round 1 is an objective OMR-based test. Mark one option per question as instructed and submit the OMR sheet within the allotted time.', 'The quiz covers programming, computer science, technology and general IT awareness.', 'Participants who qualify advance to later rounds under the organizers’ selection criteria.', 'Follow the quizmaster’s instructions. Phones, internet searches and outside help are prohibited unless organizers permit them.', 'Maintain discipline. Unfair means or misconduct may result in immediate disqualification. The quizmaster and organizing committee have the final say.', 'The registration fee is non-refundable.'] },
+      { title: 'Rules & instructions', items: ['Participation is solo. Report at least 15 minutes before the event.', 'Round 1 is an objective OMR-based test. Mark one option per question as instructed and submit the OMR sheet within the allotted time; no extra time is provided unless organizers announce it.', 'The quiz covers programming, computer science, technology and general IT awareness. Qualifiers advance to later rounds under the organizers’ selection criteria.', 'Follow the quizmaster’s instructions. Phones, internet searches and outside help are prohibited unless organizers permit them.', 'Maintain discipline. Unfair means or misconduct may result in immediate disqualification. The quizmaster and organizing committee have the final say.', 'The registration fee is non-refundable.'] },
       { title: 'Winning conditions', items: ['Results consider answer correctness, OMR round performance, speed and accuracy in later rounds, technical knowledge, logical thinking and overall performance.', 'A tie-breaker may be used if required.'] },
     ],
   },
@@ -141,7 +141,7 @@ export const eventInformation = {
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Ms. Savita, Dr. Surbhi',
     sections: [
-      { title: 'Rules & instructions', items: ['Participate individually or in a team of two.', 'An event product is assigned on the spot. Create a brand presentation, advertisement, slogan or promotional campaign.', 'Highlight the brand’s strengths, target market, USP and competitive advantage.', 'Each team gets 25 minutes to present its campaign.', 'Teams may be asked to compare their brand with a competitor and explain why customers should choose theirs.', 'Offensive content, false claims and disrespectful remarks about competitors are prohibited.', 'Judges may ask questions about marketing knowledge and strategic thinking.'] },
+      { title: 'Rules & instructions', items: ['Participate individually or in a team of two.', 'A product is assigned on the spot. Create a brand presentation, advertisement, slogan or promotional campaign.', 'Highlight the brand’s strengths, target market, USP and competitive advantage.', 'Each team gets 2–5 minutes to present its campaign.', 'Teams may be asked to compare their brand with a competitor and explain why customers should choose theirs.', 'Offensive content, false claims and disrespectful remarks about competitors are prohibited.', 'Judges may ask questions about marketing knowledge and strategic thinking.'] },
       { title: 'Judging criteria', items: ['Creativity and originality — 25%', 'Marketing strategy — 25%', 'Brand positioning and USP — 20%', 'Presentation and persuasion — 20%', 'Teamwork and confidence — 10%'] },
     ],
   },
@@ -156,7 +156,7 @@ export const eventInformation = {
     ],
   },
   'aangan': {
-    facts: [['FORMAT', 'Group of 3'], ['ENTRY FEE', '₹150'], ['PRIZES', '1st: ₹5,100; 2nd: ₹3,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 9:00 AM–12:00 PM'], ['VENUE', 'Room 113, GCAD']],
+    facts: [['FORMAT', 'Group of 3'], ['ELIGIBILITY', 'B.Arch students in 3rd–5th year'], ['ENTRY FEE', '₹150'], ['PRIZES', '1st: ₹5,100; 2nd: ₹3,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 9:00 AM–3:00 PM'], ['VENUE', 'Room 113, GCAD']],
     notes: [['Eligibility', 'B.Arch students in 3rd–5th year'], ['Theme', 'Aangan — Spaces for Learning'], ['Problem statement', 'Design an affordable, climate-responsive primary school for rural India.']],
     coordinators: 'Gauri Verma, Aayushi Adapala',
     head: 'Ayush Kumar Srivastava (9555916493)',
@@ -178,19 +178,19 @@ export const eventInformation = {
     ],
   },
   'slide-sizzle': {
-    facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 11:00 AM–1:00 PM'], ['VENUE', 'DCS 206, GIET']],
+    facts: [['FORMAT', 'Solo'], ['ENTRY FEE', '₹50'], ['PRIZES', '1st: ₹2,100; 2nd: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 11:00 AM–1:00 PM'], ['VENUE', 'DCS 206, GIET']],
     coordinators: 'Harsh (8685815676), Khushi',
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Mr. Vikas Kuchhal, Ms. Harsha',
     sections: [
-      { title: 'Rules & instructions', items: ['Report at least 15 minutes before the event.', 'Prepare a PowerPoint presentation on a selected or assigned topic as organizers direct. Each presentation is limited to 10 minutes.', 'Bring the presentation in PPT/PPTX format and keep a backup copy.', 'Relevant images, charts, diagrams, animations and other visual elements are allowed.', 'Presentations must be original; credit copied content. Offensive content, fabricated information, plagiarism and unauthorized help are prohibited.', 'Maintain professional conduct and follow the presentation order and organizer instructions.', 'Exceeding the time limit or breaking rules may result in mark deductions or disqualification. The judging panel’s decision is final.'] },
-      { title: 'Judging criteria', items: ['Content and subject knowledge', 'Creativity and originality', 'Slide design and visual appeal', 'Confidence and audience engagement', 'Clarity, communication and delivery', 'Time management'] },
+      { title: 'Rules & instructions', items: ['Report at least 15 minutes before the event. Participation is individual; no team is allowed.', 'Bring your presentation in PPT/PPTX format with a backup copy. Present for no more than five minutes.', 'Relevant images, charts, diagrams, animations and other visual elements are allowed.', 'Topics are provided after registration closes. The submission link is shared one day before the event; submit only through that link.', 'Registration fees are non-refundable. The event may be cancelled if fewer than 10 participants register.', 'Offensive content, fabricated information, plagiarism or unauthorized help are prohibited. Maintain professional conduct and follow organizer instructions. Exceeding the time limit or breaking rules may result in deductions or disqualification. The judging panel’s decision is final.'] },
+      { title: 'Judging criteria', items: ['Content and subject knowledge', 'Slide design and visual appeal', 'Confidence and audience engagement', 'Clarity, communication and delivery', 'Time management'] },
     ],
   },
   'tech-poster-making': {
-    facts: [['FORMAT', 'Solo or duo'], ['ENTRY FEE', '₹50 per person'], ['PRIZE', '1st: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 9:30 AM–11:00 AM'], ['VENUE', 'Room 306, GIET']],
+    facts: [['FORMAT', 'Solo'], ['ENTRY FEE', '₹50'], ['PRIZES', '1st: ₹1,100; 2nd: ₹750, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 9:30–11:00 AM'], ['VENUE', 'Room 306, GIET']],
     notes: [['Theme', 'Viksit Bharat 2047: Engineering the Future']],
-    coordinators: 'Nikhil Sharma (805923790), Bhumi',
+    coordinators: 'Nikhil Sharma (8059237906), Bhumi',
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Ms. Anita',
     sections: [
@@ -218,7 +218,7 @@ export const eventInformation = {
     ],
   },
   'tekken': {
-    facts: [['FORMAT', 'Solo · 1 vs 1'], ['DEVICE', 'Console or PC, depending on availability'], ['ENTRY FEE', '₹50'], ['PRIZE', '1st: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 9:30 AM onwards'], ['VENUE', 'Room 210, GCAD']],
+    facts: [['FORMAT', 'Solo · 1 vs 1'], ['DEVICE', 'Console or PC, depending on availability'], ['ENTRY FEE', '₹50'], ['PRIZE', '1st: ₹1,100, trophies and certificates'], ['DATE & TIME', '31 October 2026 · 10:00 AM onwards'], ['VENUE', 'Room 210, GCAD']],
     coordinators: 'Harshit (8287861136), Aayush (9811852293)',
     faculty: 'Mr. Bhupendar',
     sections: [
@@ -227,7 +227,7 @@ export const eventInformation = {
     ],
   },
   'ludo': {
-    facts: [['FORMAT', 'Solo'], ['DEVICE', 'Mobile · Ludo King'], ['ENTRY FEE', '₹50'], ['PRIZE', '1st: ₹1,100 and certificates'], ['DATE & TIME', '30 October 2026 · 10:00 AM onwards'], ['VENUE', 'DCS 206']],
+    facts: [['FORMAT', 'Solo'], ['DEVICE', 'Mobile · Ludo King'], ['ENTRY FEE', '₹50'], ['PRIZE', '1st: ₹1,100, trophies and certificates'], ['DATE & TIME', '30 October 2026 · 10:00 AM onwards'], ['VENUE', 'Room 109, GIET']],
     coordinators: 'Ankit (9289550809), Tanisha',
     head: 'Aayush (9811852293), Harshit (8287861136)',
     faculty: 'Ms. Mohini, Ms. Ruby',

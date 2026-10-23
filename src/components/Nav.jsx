@@ -1,6 +1,6 @@
 import { fest } from '../content'
 
-export default function Nav({ basePath = '', onRegister }) {
+export default function Nav({ basePath = '' }) {
   return (
     <header className="nav">
       <a href={`${basePath}#top`} className="nav__mark" aria-label={`${fest.name} ${fest.year} home`}>
@@ -9,7 +9,7 @@ export default function Nav({ basePath = '', onRegister }) {
       <nav aria-label="Primary navigation">
         <a href={`${basePath}#events`}>Events</a>
         <a href={`${basePath}#schedule`}>When & where</a>
-        <a href={fest.registerUrl} onClick={onRegister} className="nav__cta">Register <span aria-hidden="true">↗</span></a>
+        <a href={fest.registerUrl} target="_blank" rel="noreferrer" className="nav__cta">Register <span aria-hidden="true">↗</span></a>
       </nav>
       <details className="nav__mobile">
         <summary aria-label="Toggle navigation menu"><span className="nav__hamburger-icon" aria-hidden="true"></span></summary>

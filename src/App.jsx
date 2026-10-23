@@ -42,7 +42,7 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <Nav basePath={selectedCategory || isExplorePage ? '/' : ''} onRegister={showExplorePage} />
+      <Nav basePath={selectedCategory || isExplorePage ? '/' : ''} />
       {selectedCategory ? (
         <EventPage category={selectedCategory} item={selectedItem} eventNumber={eventNumber} />
       ) : isExplorePage ? (
@@ -55,7 +55,7 @@ export default function App() {
           <Transmission />
           <Events />
           <Countdown />
-          <Finale onRegister={showExplorePage} />
+          <Finale />
         </main>
       )}
     </>

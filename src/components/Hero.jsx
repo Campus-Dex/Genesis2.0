@@ -17,7 +17,7 @@ export default function Hero({ onExplore }) {
           <img className="hero__lockup" src="/images/genesis-hero-lockup.webp" srcSet="/images/genesis-hero-lockup-820.webp 820w, /images/genesis-hero-lockup.webp 1640w" sizes="min(100vw - 2rem, 820px)" width="1640" height="688" alt="GENESIS 2.0 — The annual tech fest, 30–31 October, 2026" />
         </h1>
         <div className="hero__actions">
-          <a className="btn btn--primary" href={fest.registerUrl} onClick={onExplore}>Register now <span aria-hidden="true">↗</span></a>
+          <a className="btn btn--primary" href={fest.registerUrl} target="_blank" rel="noreferrer">Register now <span aria-hidden="true">↗</span></a>
           <a className="btn btn--ghost" href="/?page=explore" onClick={onExplore}>Explore events <span aria-hidden="true">↗</span></a>
         </div>
       </div>
