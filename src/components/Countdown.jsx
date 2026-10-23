@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import { fest } from '../content'
 
 const target = new Date('2026-10-30T09:00:00+05:30').getTime()
@@ -11,13 +13,46 @@ const pad = (n) => String(n).padStart(2, '0')
 
 export default function Countdown() {
   const [time, setTime] = useState(remaining)
+  const countdownRef = useRef(null)
+
   useEffect(() => {
     const timer = window.setInterval(() => setTime(remaining()), 1000)
     return () => window.clearInterval(timer)
   }, [])
 
+  useGSAP(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    gsap.from('.countdown__stamp', {
+      scale: 1.8,
+      rotation: -25,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(2)',
+      scrollTrigger: {
+        trigger: countdownRef.current,
+        start: 'top 75%',
+        toggleActions: 'play none none none',
+      },
+    })
+
+    gsap.from('.countdown__clock span', {
+      y: -35,
+      scale: 0.88,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.65,
+      ease: 'back.out(1.7)',
+      scrollTrigger: {
+        trigger: '.countdown__clock',
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+    })
+  }, { scope: countdownRef })
+
   return (
-    <section className="countdown" id="schedule" aria-labelledby="countdown-heading">
+    <section className="countdown" id="schedule" aria-labelledby="countdown-heading" ref={countdownRef}>
       <div className="countdown__stamp" aria-hidden="true">MARK<br />YOUR<br />CALENDAR!</div>
       <div className="countdown__inner">
         <p className="section-kicker">IT'S A DATE</p>

@@ -1,8 +1,40 @@
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import { fest } from '../content'
 
 export default function Finale() {
+  const finaleRef = useRef(null)
+
+  useGSAP(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    gsap.from('.finale__inner', {
+      y: 45,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: finaleRef.current,
+        start: 'top 78%',
+        toggleActions: 'play none none none',
+      },
+    })
+
+    gsap.to('.finale__burst', {
+      rotation: 90,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: finaleRef.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+  }, { scope: finaleRef })
+
   return (
-    <section className="finale" id="register" aria-labelledby="finale-heading">
+    <section className="finale" id="register" aria-labelledby="finale-heading" ref={finaleRef}>
       <div className="finale__burst" aria-hidden="true">✦</div>
       <div className="finale__inner">
         <p className="section-kicker">YOUR STORY STARTS HERE</p>

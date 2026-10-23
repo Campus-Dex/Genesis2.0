@@ -1,5 +1,29 @@
-import { useEffect } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { eventInformation, fest, generalEventRules } from '../content'
+
+function RuleAccordion({ title, items }) {
+  const panelId = useId()
+  const [open, setOpen] = useState(false)
+
+  return (
+    <section className={`event-detail__rule${open ? ' event-detail__rule--open' : ''}`}>
+      <button
+        className="event-detail__rule-toggle"
+        type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={() => setOpen(value => !value)}
+      >
+        {title}
+      </button>
+      <div className="event-detail__rule-panel" id={panelId} aria-hidden={!open} inert={!open}>
+        <div className="event-detail__rule-content">
+          <ul>{items.map((entry, index) => <li key={`${title}-${index}`}>{entry}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function EventPage({ category, item, eventNumber }) {
   const pageName = item?.name ?? category.name
@@ -63,23 +87,14 @@ export default function EventPage({ category, item, eventNumber }) {
             {info.faculty && <p><small>FACULTY COORDINATORS</small><strong>{info.faculty}</strong></p>}
           </div>}
           <div className="event-detail__rules">
-            {info.sections.map(section => <details key={section.title}>
-              <summary>{section.title}</summary>
-              <ul>{section.items.map((entry, index) => <li key={`${section.title}-${index}`}>{entry}</li>)}</ul>
-            </details>)}
-            <details>
-              <summary>General rules for all participants</summary>
-              <ul>{generalEventRules.map((entry, index) => <li key={`general-${index}`}>{entry}</li>)}</ul>
-            </details>
+            {info.sections.map(section => <RuleAccordion key={section.title} title={section.title} items={section.items} />)}
+            <RuleAccordion title="General rules for all participants" items={generalEventRules} />
           </div>
         </section> : <div className="event-detail__facts event-detail__facts--single">
           <p>Schedule, fees and event-specific rules are not listed in the rulebook.</p>
         </div>)}
         {item && !info && <div className="event-detail__rules event-detail__rules--standalone">
-          <details>
-            <summary>General rules for all participants</summary>
-            <ul>{generalEventRules.map((entry, index) => <li key={`general-${index}`}>{entry}</li>)}</ul>
-          </details>
+          <RuleAccordion title="General rules for all participants" items={generalEventRules} />
         </div>}
         {!item && (
           <section className="event-detail__list" aria-label={`Events in ${category.name}`}>
@@ -87,7 +102,7 @@ export default function EventPage({ category, item, eventNumber }) {
             <div className="event-detail__items">
               {category.items.map((categoryItem, index) => (
                 <a className={`event-detail__item${categoryItem.poster ? ' event-detail__item--has-poster' : ''}`} href={`/events/${category.id}/${categoryItem.id}`} key={categoryItem.id} aria-label={`${categoryItem.name} event details`}>
-                  <span className={`event-detail__item-poster${categoryItem.poster ? ' event-detail__item-poster--image' : ''}`} aria-hidden="true">
+                  <span className={`event-detail__item-poster${categoryItem.poster ? ' event-detail__item-poster--image' : ''}${category.id === 'school-track' && categoryItem.poster ? ' event-detail__item-poster--school-track' : ''}`} aria-hidden="true">
                     {categoryItem.poster ? <img src={categoryItem.poster} alt="" /> : (
                       <>
                         <span className="event-detail__poster-kicker">GENESIS 2.0 <i>•</i> EVENT POSTER</span>
@@ -101,7 +116,7 @@ export default function EventPage({ category, item, eventNumber }) {
                   {!categoryItem.poster && <span className="event-detail__item-copy">
                     <small>{String(index + 1).padStart(2, '0')}</small>
                   </span>}
-                  {categoryItem.poster && <strong className="event-detail__item-poster-title"><small className="event-detail__item-poster-number">{String(index + 1).padStart(2, '0')}</small>{categoryItem.name}</strong>}
+                  {categoryItem.poster && <strong className="event-detail__item-poster-title"><small className="event-detail__item-poster-number">{String(index + 1).padStart(2, '0')}</small><span className="event-detail__item-poster-name">{categoryItem.name}</span></strong>}
                   {!categoryItem.poster && <span aria-hidden="true">↗</span>}
                 </a>
               ))}

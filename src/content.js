@@ -33,6 +33,15 @@ export const events = [
     ],
   },
   {
+    id: 'battle-arena', name: 'Battle Arena', blurb: 'Bring your team. Take your place in the arena.', color: 'purple', image: 'card-esports.jpg', alt: 'Battle Arena event artwork',
+    items: [
+      { id: 'bgmi', name: 'BGMI Championship', poster: '/images/event-posters/bgmi-championship.webp', registrationUrl: 'https://forms.gle/1E2ouFhJCPWAB5u9A' },
+      { id: 'free-fire-max', name: 'Free Fire Max Championship', poster: '/images/event-posters/free-fire-max.webp', registrationUrl: 'https://forms.gle/CdB9wpx3X3x8bNAQ8' },
+      { id: 'tekken', name: 'Tekken Tournament', poster: '/images/event-posters/tekken.webp', registrationUrl: 'https://forms.gle/5UaG9DcEdGb99WFX9' },
+      { id: 'ludo', name: 'Ludo Mania', poster: '/images/event-posters/ludo-mania.webp', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
+    ],
+  },
+  {
     id: 'business-entrepreneurship', name: 'Business & Entrepreneurship', blurb: 'Turn bold ideas into brands, ventures, and success.', color: 'red', image: 'card-hackathon.jpg', alt: 'Business and entrepreneurship event artwork',
     items: [
       { id: 'venture-vault', name: 'Venture Vault', poster: '/images/event-posters/venture-vault.webp', registrationUrl: 'https://forms.gle/nc3vDPg8b1sb2SaEA' },
@@ -50,20 +59,11 @@ export const events = [
     ],
   },
   {
-    id: 'battle-arena', name: 'E-Sports', blurb: 'Bring your team. Take your place in the arena.', color: 'purple', image: 'card-esports.jpg', alt: 'E-sports event artwork',
-    items: [
-      { id: 'bgmi', name: 'BGMI Championship', poster: '/images/event-posters/bgmi-championship.webp', registrationUrl: 'https://forms.gle/1E2ouFhJCPWAB5u9A' },
-      { id: 'free-fire-max', name: 'Free Fire Max Championship', poster: '/images/event-posters/free-fire-max.webp', registrationUrl: 'https://forms.gle/CdB9wpx3X3x8bNAQ8' },
-      { id: 'tekken', name: 'Tekken Tournament', poster: '/images/event-posters/tekken.webp', registrationUrl: 'https://forms.gle/5UaG9DcEdGb99WFX9' },
-      { id: 'ludo', name: 'Ludo Mania', poster: '/images/event-posters/ludo-mania.webp', registrationUrl: 'https://forms.gle/iquFA2irhVguHwjE8' },
-    ],
-  },
-  {
     id: 'school-track', name: 'School Track', blurb: 'Bring bold ideas, share what you create, and take the stage.', color: 'cyan', image: 'card-workshops.jpg', alt: 'School track artwork',
     items: [
-      { id: 'tech-debate', name: 'Tech Debate' },
-      { id: 'startup-idea', name: 'Start-up Idea' },
-      { id: 'school-exhibition', name: 'Exhibition' },
+      { id: 'tech-debate', name: 'Tech Debate', poster: '/images/event-posters/school-tech-debate.webp', registrationUrl: 'https://forms.gle/VasH11Uv3oGs4LFP6' },
+      { id: 'startup-idea', name: 'Startup Ideas', poster: '/images/event-posters/school-startup-idea.webp', registrationUrl: 'https://forms.gle/VasH11Uv3oGs4LFP6' },
+      { id: 'school-exhibition', name: 'Working Models / Tech Projects', poster: '/images/event-posters/school-working-models.webp', registrationUrl: 'https://forms.gle/VasH11Uv3oGs4LFP6' },
     ],
   },
 ]
